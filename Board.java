@@ -6,6 +6,7 @@ public class Board {
     int numCols = 10;
     int[] ships = new int[5];
     int newRow;
+    int newCol;
 
     int[][] game = new int[numRows][numCols];
 
@@ -13,7 +14,13 @@ public class Board {
     public void Setup() {
         Scanner scan = new Scanner(System.in);
         System.out.println("Choose Location of Carrier");
-        newRow = scan.nextInt();
+        for (int q = 0; q<5; q++){
+            System.out.println("What Row would you like to place the first peg of your carrier in?");
+            newRow = scan.nextInt() -1;
+            System.out.println("What Column>");
+            newCol = scan.nextInt() - 1;
+            game[newRow][newCol] = 1;
+        }
 
     }
 

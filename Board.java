@@ -7,11 +7,33 @@ public class Board {
     int[] ships = new int[5];
     int newRow;
     int newCol;
+    String pickbrd; 
+    String fast = "FAST";
+    String reg = "REGULAR";
+    boolean fastOReg;
 
     int[][] game = new int[numRows][numCols];
 
     //Setup
-    public void Setup() {
+
+    //what game?
+    public void WhatGame() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("What game would you like to play, Fast or Normal?");
+        pickbrd = scan.nextLine();
+        if (pickbrd.toUpperCase().equals.fast) {
+            fastOReg = true;
+        }
+        else {
+            fastOReg = false;
+        }
+
+    }
+
+
+
+    // Ship Setup
+    public void SetupReg() {
         Scanner scan = new Scanner(System.in);
         System.out.println("Choose Location of Carrier");
         for (int q = 0; q<5; q++){

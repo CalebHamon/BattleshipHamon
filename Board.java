@@ -21,7 +21,7 @@ public class Board {
         Scanner scan = new Scanner(System.in);
         System.out.println("What game would you like to play, Fast or Normal?");
         pickbrd = scan.nextLine();
-        if (pickbrd.toUpperCase().equals.fast) {
+        if (pickbrd.toUpperCase().equals(fast)) {
             fastOReg = true;
         }
         else {
@@ -33,6 +33,9 @@ public class Board {
 
 
     // Ship Setup
+    
+    // fastOReg = false, go to setupReg, if true then go to a fastReg, with limited ships
+
     public void SetupReg() {
         Scanner scan = new Scanner(System.in);
         System.out.println("Choose Location of Carrier");
@@ -52,6 +55,36 @@ public class Board {
             game[newRow][newCol] = 1;
         }
         System.out.println("Choose Location of Cruiser");
+        for (int q = 0; q<3; q++){
+            System.out.println("What Row would you like to place the first peg of your cruiser in?");
+            newRow = scan.nextInt() -1;
+            System.out.println("What Column>");
+            newCol = scan.nextInt() - 1;
+            game[newRow][newCol] = 1;
+        }
+        System.out.println("Choose Location of Submarine");
+        for (int q = 0; q<3; q++){
+            System.out.println("What Row would you like to place the first peg of your submarine in?");
+            newRow = scan.nextInt() -1;
+            System.out.println("What Column>");
+            newCol = scan.nextInt() - 1;
+            game[newRow][newCol] = 1;
+        }
+        System.out.println("Choose Location of Destroyer");
+        for (int q = 0; q<2; q++){
+            System.out.println("What Row would you like to place the first peg of your destroyer in?");
+            newRow = scan.nextInt() -1;
+            System.out.println("What Column>");
+            newCol = scan.nextInt() - 1;
+            game[newRow][newCol] = 1;
+        }
+
+    }
+
+public void SetupFas() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Choose Location of Carrier");
+    System.out.println("Choose Location of Cruiser");
         for (int q = 0; q<3; q++){
             System.out.println("What Row would you like to place the first peg of your cruiser in?");
             newRow = scan.nextInt() -1;

@@ -7,18 +7,20 @@ public class Board {
     int[] ships = new int[5];
     int newRow;
     int newCol;
-    String pickbrd; 
-    String fast = "FAST";
-    String reg = "REGULAR";
-    boolean fastOReg;
+
 
     int[][] game = new int[numRows][numCols];
 
     //Setup
 
     //what game?
-    public void WhatGame() {
+    public static boolean WhatGame() {
         Scanner scan = new Scanner(System.in);
+        String pickbrd; 
+        String fast = "FAST";
+        String reg = "REGULAR";
+        boolean fastOReg;
+
         do {
             System.out.println("What game would you like to play, Fast or Normal?");
             pickbrd = scan.nextLine();
@@ -31,6 +33,7 @@ public class Board {
         else {
             fastOReg = false;
         }
+        return fastOReg;
         }
 
     

@@ -19,16 +19,21 @@ public class Board {
     //what game?
     public void WhatGame() {
         Scanner scan = new Scanner(System.in);
-        System.out.println("What game would you like to play, Fast or Normal?");
-        pickbrd = scan.nextLine();
-        if (pickbrd.toUpperCase().equals(fast)) {
-            fastOReg = true;
+        do {
+            System.out.println("What game would you like to play, Fast or Normal?");
+            pickbrd = scan.nextLine();
         }
+        while (!(pickbrd.toUpperCase().equals(fast)) || (pickbrd.toUpperCase().equals(reg)));
+            
+        if (pickbrd.toUpperCase().equals(fast)) {
+                fastOReg = true;
+            }
         else {
             fastOReg = false;
         }
+        }
 
-    }
+    
 
 
 

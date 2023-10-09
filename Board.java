@@ -10,9 +10,6 @@ public class Board {
     int newRow;
     int newCol;
 
-
-
-
     int[][] game = new int[numRows][numCols];
 
     public static boolean Instructions() {
@@ -34,8 +31,8 @@ public class Board {
             System.out.println("If they hit a ship, the computer will say that it did so, and same if it missed or you sinked a ship");
             System.out.println("The goal by the end of the game is to sink all of your opponents ships before they sink yours");
         }
-        System.out.println("Would you like o play CPU or player 2 (on the same computer)");
-        System.out.println("Say 'YES' if yout would like to play CPU and 'NO' if you would like to play someone on your computer");
+        System.out.println("Would you like to play CPU or player 2 (on the same computer)");
+        System.out.println("Say 'YES' if you would like to play CPU and 'NO' if you would like to play someone on your computer");
         do {
         playerSelec = scan.nextLine();
         }
@@ -130,35 +127,6 @@ public class Board {
 
     }
 
-public void SetupFas() {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Choose Location of Carrier");
-        for (int q = 0; q<3; q++){
-            System.out.println("What Row would you like to place the first peg of your cruiser in?");
-            newRow = scan.nextInt() -1;
-            System.out.println("What Column");
-            newCol = scan.nextInt() - 1;
-            game[newRow][newCol] = 1;
-        }
-        System.out.println("Choose Location of Submarine");
-        for (int q = 0; q<3; q++){
-            System.out.println("What Row would you like to place the first peg of your submarine in?");
-            newRow = scan.nextInt() -1;
-            System.out.println("What Column");
-            newCol = scan.nextInt() - 1;
-            game[newRow][newCol] = 1;
-        }
-        System.out.println("Choose Location of Destroyer");
-        for (int q = 0; q<2; q++){
-            System.out.println("What Row would you like to place the first peg of your destroyer in?");
-            newRow = scan.nextInt() -1;
-            System.out.println("What Column");
-            newCol = scan.nextInt() - 1;
-            game[newRow][newCol] = 1;
-        }
-
-    }
-
     //play
 
 
@@ -166,6 +134,7 @@ public void SetupFas() {
         for (int i = 0; i < numCols; i++){
             for (int r = 0; r <numRows; r++){
                 System.out.print(game[i][r]);
+                System.out.print(" ");
             }
             System.out.println("");
         }

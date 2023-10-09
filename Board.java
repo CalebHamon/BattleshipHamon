@@ -34,8 +34,8 @@ public class Board {
             System.out.println("If they hit a ship, the computer will say that it did so, and same if it missed or you sinked a ship");
             System.out.println("The goal by the end of the game is to sink all of your opponents ships before they sink yours");
         }
-        System.out.println("Would you like to play CPU or player 2 (on the same computer)");
-        System.out.println("Say 'YES' if you would like to play CPU and 'NO' if you would like to play someone on your computer");
+        System.out.println("Would you like o play CPU or player 2 (on the same computer)");
+        System.out.println("Say 'YES' if yout would like to play CPU and 'NO' if you would like to play someone on your computer");
         do {
         playerSelec = scan.nextLine();
         }
@@ -57,19 +57,21 @@ public class Board {
         Scanner scan = new Scanner(System.in);
         String pickbrd; 
         String fast = "FAST";
-        String reg = "REGULAR";
+        String reg = "NORMAL";
         boolean fastOReg;
 
         do {
             System.out.println("What game would you like to play, Fast or Normal?");
             pickbrd = scan.nextLine();
         }
-        while (!(pickbrd.toUpperCase().equals(fast)) || (pickbrd.toUpperCase().equals(reg)));
+        while (!(pickbrd.toUpperCase().equals(fast) || pickbrd.toUpperCase().equals(reg)));
             
         if (pickbrd.toUpperCase().equals(fast)) {
+                System.out.println("");
                 fastOReg = true;
             }
         else {
+            System.out.println("");
             fastOReg = false;
         }
         return fastOReg;

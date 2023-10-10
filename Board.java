@@ -2,6 +2,9 @@ import java.util.Scanner;
 
 public class Board {
     
+    //Variables that will be used for later methods, these will be used in multiple methods
+    //hence why it is a global variable
+
     int numRows = 10;
     int numCols = 10;
     int fNumCols = 8;
@@ -12,6 +15,11 @@ public class Board {
 
     int[][] game = new int[numRows][numCols];
 
+    
+    //Instructions is made to give instructions to the user
+    //Instructions is a method due to it also serving the purpose to figure out if the
+    //user wants to set up a manual or CPU game
+    
     public static boolean Instructions() {
         String newInst;
         String playerSelec;
@@ -47,9 +55,11 @@ public class Board {
 
     }
 
-    //Setup
+   
 
-    //what game?
+    //WhatGame asks just that, What Game?
+    //It comes after instructions and asks the user if they would like to
+    //play a fast game or a slow one (reg)
     public static boolean WhatGame() {
         Scanner scan = new Scanner(System.in);
         String pickbrd; 
@@ -78,13 +88,9 @@ public class Board {
 
 
 
-    // Ship Setup
+    //PrintBoard prints the boards for each type of game
+    //Reg(10x10) is bigger than Fast (8x8)
     
-    // fastOReg = false, go to setupReg, if true then go to a fastReg, with limited ships
-
-    //play
-
-
     public void PrintBoardReg() {
         for (int i = 0; i < numCols; i++){
             for (int r = 0; r <numRows; r++){

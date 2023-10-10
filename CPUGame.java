@@ -10,11 +10,18 @@ public class CPUGame {
     
     int[][] game = new int[numRows][numCols];
 
+    //Method that will eventually host the actual playing of the game
+
     public void FastCPUSetup() {
     
 
     }
     
+    //Method that ask someone for where they would like to play their pieces
+    //Still need to work on errors for if it is out of bounds and if they type in 'one'
+    //SetupFas and SetupReg are the same for the exception that Fast has less ships
+
+
     public void SetupFas() {
         int fNumCols = 8;
         int fNumRows = 8;

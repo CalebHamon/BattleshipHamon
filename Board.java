@@ -20,11 +20,11 @@ public class Board {
         boolean cup;
        Scanner scan = new Scanner(System.in);
         System.out.println("Welcome to BATTLESHIP!");
-        System.out.println("Would you like to  learn how to play?");
+        System.out.println("Would you like to learn how to play?");
         do {
             newInst = scan.nextLine();
         }
-        while (!(newInst.toUpperCase().equals(yayer)) || !(newInst.toUpperCase().equals(noer)));
+        while (!((newInst.toUpperCase().equals(yayer)) || (newInst.toUpperCase().equals(noer))));
         if ((newInst.toUpperCase().equals(yayer))) {
             System.out.println("BATTLESHIP is a guessing game, where each opponent takes turns guessing coordinates ");
             System.out.println("Each turn players will the oppurtunity to guess a location in which they think their opponents ships are");
@@ -36,7 +36,7 @@ public class Board {
         do {
         playerSelec = scan.nextLine();
         }
-        while (!(playerSelec.toUpperCase().equals(yayer)) || !(playerSelec.toUpperCase().equals(noer)));
+        while (!((playerSelec.toUpperCase().equals(yayer)) || (playerSelec.toUpperCase().equals(noer))));
         if ((playerSelec.toUpperCase().equals(yayer))) {
             cup = true;
         }
@@ -82,51 +82,6 @@ public class Board {
     
     // fastOReg = false, go to setupReg, if true then go to a fastReg, with limited ships
 
-    public void SetupReg() {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Choose Location of Carrier");
-        for (int q = 0; q<5; q++){
-            System.out.println("What Row would you like to place the peg of your carrier in?");
-            newRow = scan.nextInt() -1;
-            System.out.println("What Column");
-            newCol = scan.nextInt() - 1;
-            game[newRow][newCol] = 1;
-        }
-        System.out.println("Choose Location of Battleship");
-        for (int q = 0; q<4; q++){
-            System.out.println("What Row would you like to place the peg of your battleship in?");
-            newRow = scan.nextInt() -1;
-            System.out.println("What Column");
-            newCol = scan.nextInt() - 1;
-            game[newRow][newCol] = 1;
-        }
-        System.out.println("Choose Location of Cruiser");
-        for (int q = 0; q<3; q++){
-            System.out.println("What Row would you like to place the first peg of your cruiser in?");
-            newRow = scan.nextInt() -1;
-            System.out.println("What Column");
-            newCol = scan.nextInt() - 1;
-            game[newRow][newCol] = 1;
-        }
-        System.out.println("Choose Location of Submarine");
-        for (int q = 0; q<3; q++){
-            System.out.println("What Row would you like to place the first peg of your submarine in?");
-            newRow = scan.nextInt() -1;
-            System.out.println("What Column");
-            newCol = scan.nextInt() - 1;
-            game[newRow][newCol] = 1;
-        }
-        System.out.println("Choose Location of Destroyer");
-        for (int q = 0; q<2; q++){
-            System.out.println("What Row would you like to place the first peg of your destroyer in?");
-            newRow = scan.nextInt() -1;
-            System.out.println("What Column");
-            newCol = scan.nextInt() - 1;
-            game[newRow][newCol] = 1;
-        }
-
-    }
-
     //play
 
 
@@ -143,6 +98,7 @@ public class Board {
         for (int p = 0; p < fNumCols; p++){
             for (int c = 0; c <fNumRows; c++){
                 System.out.print(game[p][c]);
+                System.out.print(" ");
             }
             System.out.println("");
         }

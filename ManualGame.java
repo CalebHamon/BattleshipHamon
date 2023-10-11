@@ -30,6 +30,8 @@ public class ManualGame {
     public void SetupFas() {
         int fNumCols = 8;
         int fNumRows = 8;
+        int containerRows = 0;
+        int containerCols = 0;
         Scanner scan = new Scanner(System.in);
         System.out.println("Choose Location of Carrier");
         for (int q = 0; q<3; q++){
@@ -37,8 +39,43 @@ public class ManualGame {
             newRow = scan.nextInt() -1;
             System.out.println("What Column");
             newCol = scan.nextInt() - 1;
-            game[newRow][newCol] = 1;
+            if(q == 0){
+                game[newRow][newCol] = 1;
+                containerCols = newCol;
+                containerRows = newRow;
+            }
+            else if(newCol == containerCols) {
+                if((newRow == containerRows + 1) || (newRow == containerRows - 1)){
+                    game[newRow][newCol] = 1;
+                    containerCols = newCol;
+                    containerRows = newRow;
+                }
+                else {
+                    q = q - 1;
+                    System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
+                }
+            }
+            else if(newRow == containerRows){
+                if((newCol == containerCols + 1) || (newCol == containerCols - 1)){
+                    game[newRow][newCol] = 1;
+                    containerCols = newCol;
+                    containerRows = newRow;
+                }
+                else {
+                    q = q - 1;
+                    System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
+                }
+            }
+            else {
+                q = q - 1;
+                System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
+            }
+
         }
+    
+
+            
+        
         System.out.println("Choose Location of Submarine");
         for (int q = 0; q<3; q++){
             System.out.println("What Row would you like to place the peg of your submarine in?");

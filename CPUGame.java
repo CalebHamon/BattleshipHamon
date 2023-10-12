@@ -11,11 +11,6 @@ public class CPUGame {
     int[][] game = new int[numRows][numCols];
 
     //Method that will eventually host the actual playing of the game
-
-    public void FastCPUSetup() {
-    
-
-    }
     
     //Method that ask someone for where they would like to play their pieces
     //Still need to work on errors for if it is out of bounds and if they type in 'one'
@@ -159,6 +154,7 @@ public class CPUGame {
             }
             System.out.println("");
         }
+        scan.close();
 
     }
 
@@ -357,7 +353,9 @@ public class CPUGame {
                     q = q - 1;
                     System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
                 }
+                
             }
+            scan.close();
 
     }
 }

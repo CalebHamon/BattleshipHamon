@@ -78,6 +78,7 @@ public class ManualGame {
                 q = q - 1;
                 System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
             }
+            
 
         }
     
@@ -170,6 +171,7 @@ public class ManualGame {
             }
             System.out.println("");
         }
+        scan.close();
 
     }
 
@@ -367,7 +369,7 @@ public class ManualGame {
                 System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
             }
             }
-
+            scan.close();
     }
     
 }

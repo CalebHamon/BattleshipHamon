@@ -20,7 +20,7 @@ public class Board {
     //Instructions is a method due to it also serving the purpose to figure out if the
     //user wants to set up a manual or CPU game
     
-    public static boolean Instructions() {
+    public boolean Instructions() {
         String newInst;
         String playerSelec;
         String yayer = "YES";
@@ -51,7 +51,9 @@ public class Board {
         else {
             cup = false;
         }
+        scan.close();
         return cup;
+        
 
     }
 
@@ -81,6 +83,7 @@ public class Board {
             System.out.println("");
             fastOReg = false;
         }
+        scan.close();
         return fastOReg;
         }
 

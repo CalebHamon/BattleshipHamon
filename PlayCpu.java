@@ -9,7 +9,7 @@ public class PlayCpu {
     
         Scanner scan = new Scanner(System.in);
         int colGuess;
-        System.out.println("Place a guess!");s
+        System.out.println("Place a guess!");
         do {
         System.out.println("What Col Would you like to guess?");
         colGuess = scan.nextInt();

@@ -27,6 +27,14 @@ public class ManualGame {
     //Still need to work on errors for if it is out of bounds and if they type in 'one'
     //SetupFas and SetupReg are the same for the exception that Fast has less ships
 
+
+    //Also I need to add a random option for the user to randomly place ships
+    //I think I will do a random number between 1 and 2, one being put the boat
+    //in the same Col and 2 being put the boat in the same Row
+    //Then have another random num generator from 1-8, where if it adds a peg to that number to either side
+    //of either the row or the col. For the exception of 1 and 8 where I would do the 2 place next to the peg
+    //that would be in the middle
+
     public void SetupFas() {
         int fNumCols = 8;
         int fNumRows = 8;

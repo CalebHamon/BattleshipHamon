@@ -23,6 +23,7 @@ public class CPUGame {
     //Then have another random num generator from 1-8, where if it adds a peg to that number to either side
     //of either the row or the col. For the exception of 1 and 8 where I would do the 2 place next to the peg
     //that would be in the middle
+    //TO DO: Correct names of ships, I think some of them are off still.
 
     public void SetupFas() {
         int containerCols = 0;

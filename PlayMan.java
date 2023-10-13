@@ -5,6 +5,8 @@ public class PlayMan {
     //Where guessing implementations is created for both fast and reg games
     //This goes through from FastManColGuess to RegManRowGuess
     //These have different methods for each User, making it easier to keep track of who guessed what
+    //TO DO: Error control: I have not tested these methods yet, so I am sure there is bound to be some error, but to the eye it looks good to me.
+    //Also might need to do a way to hide each board that way there is no cheating
     
     public static int FastManColGuessU1() {
     

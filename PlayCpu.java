@@ -4,6 +4,7 @@ public class PlayCpu {
 
     //Where guessing implementations is created for both fast and reg games
     //This goes through from FastCPUColGuess to RegCPURowGuess
+    //TO DO: Error control: I have not tested these methods yet, so I am sure there is bound to be some error, but to the eye it looks good to me.
     
     public static int FastCPUColGuess() {
     

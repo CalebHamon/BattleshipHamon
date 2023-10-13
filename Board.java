@@ -51,7 +51,7 @@ public class Board {
         else {
             cup = false;
         }
-        scan.close();
+        //scan.close();  //closed to test error w Caleb
         return cup;
         
 
@@ -62,18 +62,20 @@ public class Board {
     //WhatGame asks just that, What Game?
     //It comes after instructions and asks the user if they would like to
     //play a fast game or a slow one (reg)
-    public static boolean WhatGame() {
-        Scanner scan = new Scanner(System.in);
-        String pickbrd; 
+    public boolean WhatGame() {
+        Scanner scan2 = new Scanner(System.in);
+        String pickbrd = ""; 
         String fast = "FAST";
         String reg = "NORMAL";
         boolean fastOReg;
 
+        //Broken; though it was working
+
         do {
             System.out.println("What game would you like to play, Fast or Normal?");
-            pickbrd = scan.nextLine();
+            pickbrd = scan2.nextLine();
         }
-        while (!(pickbrd.toUpperCase().equals(fast) || pickbrd.toUpperCase().equals(reg)));
+        while (!(pickbrd.toUpperCase().equals(fast)));  //|| !(pickbrd.toUpperCase().equals(reg) )  );
             
         if (pickbrd.toUpperCase().equals(fast)) {
                 System.out.println("");
@@ -83,7 +85,7 @@ public class Board {
             System.out.println("");
             fastOReg = false;
         }
-        scan.close();
+        scan2.close();
         return fastOReg;
         }
 

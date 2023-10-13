@@ -15,7 +15,7 @@ public class PlayCpu {
         System.out.println("What Col Would you like to guess?");
         colGuess = scan.nextInt();
         }
-        while (!(colGuess == 1 || colGuess == 2 || colGuess == 3 || colGuess == 4 || colGuess == 5 || colGuess == 6 || colGuess == 7 || colGuess == 8));
+        while (!(colGuess < 1 && colGuess > 8));
         scan.close();
         return colGuess;
     }
@@ -28,7 +28,7 @@ public class PlayCpu {
         System.out.println("What Row Would you like to guess?");
         rowGuess = scan.nextInt();
         }
-        while (!(rowGuess == 1 || rowGuess == 2 || rowGuess == 3 || rowGuess == 4 || rowGuess == 5 || rowGuess == 6 || rowGuess == 7 || rowGuess == 8));
+        while (!(rowGuess < 1 && rowGuess > 8));
         scan.close();
         return rowGuess; 
     }
@@ -42,7 +42,7 @@ public class PlayCpu {
         System.out.println("What Col Would you like to guess?");
         colGuess = scan.nextInt();
         }
-        while (!(colGuess == 1 || colGuess == 2 || colGuess == 3 || colGuess == 4 || colGuess == 5 || colGuess == 6 || colGuess == 7 || colGuess == 8 || colGuess == 9 || colGuess == 10));
+        while (!(colGuess < 1 && colGuess > 10));
         scan.close();
         return colGuess;
     }
@@ -55,7 +55,7 @@ public class PlayCpu {
         System.out.println("What Row Would you like to guess?");
         rowGuess = scan.nextInt();
         }
-        while (!(rowGuess == 1 || rowGuess == 2 || rowGuess == 3 || rowGuess == 4 || rowGuess == 5 || rowGuess == 6 || rowGuess == 7 || rowGuess == 8 || rowGuess == 9 || rowGuess == 10));
+        while (!(rowGuess < 1 && rowGuess > 10));
         scan.close();
         return rowGuess; 
     }

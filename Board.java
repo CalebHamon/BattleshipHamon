@@ -26,34 +26,35 @@ public class Board {
         String playerSelec;
         String yayer = "YES";
         String noer = "NO";
-        boolean cup;
-        Scanner scan = new Scanner(System.in); //try catch
+        boolean cup = false;
+        // try catch
         System.out.println("Welcome to BATTLESHIP!");
         System.out.println("Would you like to learn how to play?");
-        do {
-            newInst = scan.nextLine();
-        } while (!((newInst.toUpperCase().equals(yayer)) || (newInst.toUpperCase().equals(noer))));
-        if ((newInst.toUpperCase().equals(yayer))) {
-            System.out.println("BATTLESHIP is a guessing game, where each opponent takes turns guessing coordinates ");
-            System.out.println(
-                    "Each turn players will the oppurtunity to guess a location in which they think their opponents ships are");
-            System.out.println(
-                    "If they hit a ship, the computer will say that it did so, and same if it missed or you sinked a ship");
-            System.out.println(
-                    "The goal by the end of the game is to sink all of your opponents ships before they sink yours");
+        try (Scanner scan = new Scanner(System.in)) {
+
+            do {
+                newInst = scan.nextLine();
+            } while (!((newInst.toUpperCase().equals(yayer)) || (newInst.toUpperCase().equals(noer))));
+            if ((newInst.toUpperCase().equals(yayer))) {
+                System.out.println("BATTLESHIP is a guessing game, where each opponent takes turns guessing coordinates ");
+                System.out.println("Each turn players will the oppurtunity to guess a location in which they think their opponents ships are");
+                System.out.println("If they hit a ship, the computer will say that it did so, and same if it missed or you sinked a ship");
+                System.out.println("The goal by the end of the game is to sink all of your opponents ships before they sink yours");
+            }
+            System.out.println("Would you like to play CPU or player 2 (on the same computer)");
+            System.out.println("Say 'YES' if you would like to play CPU and 'NO' if you would like to play someone on your computer");
+            do {
+                playerSelec = scan.nextLine();
+            } while (!((playerSelec.toUpperCase().equals(yayer)) || (playerSelec.toUpperCase().equals(noer))));
+            if ((playerSelec.toUpperCase().equals(yayer))) {
+                cup = true;
+            } else {
+                cup = false;
+            }
+        } catch (Exception e) {
+            System.out.println("Something went wrong, redirecting to Manual game. Please rerun if you want CPU " + e.toString());
         }
-        System.out.println("Would you like to play CPU or player 2 (on the same computer)");
-        System.out.println(
-                "Say 'YES' if you would like to play CPU and 'NO' if you would like to play someone on your computer");
-        do {
-            playerSelec = scan.nextLine();
-        } while (!((playerSelec.toUpperCase().equals(yayer)) || (playerSelec.toUpperCase().equals(noer))));
-        if ((playerSelec.toUpperCase().equals(yayer))) {
-            cup = true;
-        } else {
-            cup = false;
-        }
-        //scan.close(); // closed to test error w Caleb
+        // scan.close(); // closed to test error w Caleb
         return cup;
 
     }
@@ -71,16 +72,15 @@ public class Board {
             do {
                 System.out.println("What game would you like to play, Fast or Normal?");
                 pickbrd = scan2.nextLine();
-            } while (!(pickbrd.toUpperCase().equals(fast))); // || !(pickbrd.toUpperCase().equals(reg) ) );
+            } while (!(pickbrd.toUpperCase().equals(fast) || pickbrd.toUpperCase().equals(reg)));
 
             if (pickbrd.toUpperCase().equals(fast)) {
                 fastOReg = true;
             }
             System.out.println("");
 
-
         } catch (Exception e) {
-            System.out.println("Something went wrong "+ e.toString());
+            System.out.println("Something went wrong " + e.toString());
         }
         // Broken; though it was working
 

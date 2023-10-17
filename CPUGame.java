@@ -316,6 +316,7 @@ public class CPUGame {
                     q = q - 1;
                     System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
                 }
+                scan.close();
 
             }
 

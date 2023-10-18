@@ -13,7 +13,6 @@ public class Tester {
     //I think I could do this by a do while loop for the former and a conditional for if they would like to play again.
     //Also need to create a board for guessing, though shouldnt be too hard considering I have already made another method similar to it
     
-    //Maybe try different scan names
 
     
     public static void main(String[] args){

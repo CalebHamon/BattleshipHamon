@@ -17,21 +17,20 @@ public class Tester {
     
     public static void main(String[] args){
         Board b1 = new Board();
-        CPUGame c1 = new CPUGame();
-        ManualGame m1 = new ManualGame();
+        Setup s1 = new Setup();
         int[][] game = new int[8][8];
-        game = c1.SetupFas();
+        game = s1.SetupFas();
         if (b1.Instructions()){
 
             if(b1.WhatGame()){
                 b1.PrintBoardFas();
                 System.out.println("");
-                c1.SetupFas();
+                s1.SetupFas();
                 }
             else {
                 b1.PrintBoardReg();
                 System.out.println("");
-                c1.SetupReg();
+                s1.SetupReg();
             }
 
         }
@@ -40,12 +39,12 @@ public class Tester {
             if(b1.WhatGame()){
                 b1.PrintBoardFas();
                 System.out.println("");
-                m1.SetupFas();
+                s1.SetupFas();
                 }
             else {
                 b1.PrintBoardReg();
                 System.out.println("");
-                m1.SetupReg();
+                s1.SetupReg();
                 }   
 
 

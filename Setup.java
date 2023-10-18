@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class CPUGame {
+public class Setup {
 
     int numCols = 10;
     int numRows = 10;

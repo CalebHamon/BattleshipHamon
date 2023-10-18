@@ -27,7 +27,7 @@ public class Board {
         String yayer = "YES";
         String noer = "NO";
         boolean cup = false;
-        // try catch
+        // try catch - resolved
         System.out.println("Welcome to BATTLESHIP!");
         System.out.println("Would you like to learn how to play?");
         Scanner scan = new Scanner(System.in);

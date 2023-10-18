@@ -18,16 +18,17 @@ public class Tester {
     public static void main(String[] args){
         Board b1 = new Board();
         Setup s1 = new Setup();
-        int[][] game = new int[8][8];
-        game = s1.SetupFas();
-        if (b1.Instructions()){
+        s1.SetupCPUFas();
+        if (b1.Instructions()){ //would they like to play MAN(false) or CPU(true)
 
-            if(b1.WhatGame()){
+            if(b1.WhatGame()){ //would they like to play fast(true) or normal(false)
+                int[][] game = new int[7][7];
                 b1.PrintBoardFas();
                 System.out.println("");
                 s1.SetupFas();
                 }
             else {
+                int[][] game = new int[9][9];
                 b1.PrintBoardReg();
                 System.out.println("");
                 s1.SetupReg();
@@ -36,12 +37,14 @@ public class Tester {
         }
         else {
 
-            if(b1.WhatGame()){
+            if(b1.WhatGame()){ //would they like to play fast(true) or normal(false)
+                int[][] game = new int[7][7];
                 b1.PrintBoardFas();
                 System.out.println("");
                 s1.SetupFas();
                 }
             else {
+                int[][] game = new int[9][9];
                 b1.PrintBoardReg();
                 System.out.println("");
                 s1.SetupReg();

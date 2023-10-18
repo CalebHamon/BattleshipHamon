@@ -1,13 +1,12 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class Setup {
 
-    int numCols = 10;
-    int numRows = 10;
+    int numCols;
+    int numRows;
     int newRow;
     int newCol;
-
-    int[][] game = new int[numRows][numCols];
 
     // Method that will eventually host the actual playing of the game
 
@@ -27,6 +26,9 @@ public class Setup {
     // TO DO: Correct names of ships, I think some of them are off still.
 
     public int[][] SetupFas() {
+        numCols = 7;
+        numRows = 7;
+        int[][] game = new int[numRows][numCols];
         int containerCols = 0;
         int containerRows = 0;
         int fNumCols = 8;
@@ -163,7 +165,10 @@ public class Setup {
 
     }
 
-    public int SetupReg() {
+    public int[][] SetupReg() {
+        numCols = 9;
+        numRows = 9;
+        int[][] game = new int[numRows][numCols];
         int containerCols = 0;
         int containerRows = 0;
         Scanner scan = new Scanner(System.in);
@@ -364,9 +369,66 @@ public class Setup {
             }
 
         }
-        return game[newRow][newCol];
+        return game;
 
         // scan.close();
 
+    }
+
+    public int[][] SetupCPUFas() {
+        numCols = 7;
+        numRows = 7;
+        int[][] game = new int[numRows][numCols];
+        Random random = new Random();
+        int upperBound = 3;
+        int rVc;
+        int randRow;
+        int randCol;
+        for (int q = 0; q < upperBound; q++){
+            rVc = random.nextInt(2);
+            if (rVc == 0){
+                randRow = random.nextInt(8);
+                randCol = random.nextInt(8);
+                if (randCol == 0){
+                    game[randRow][randCol] = 1;
+                    game[randRow][randCol + 1] = 1;
+                    game[randRow][randCol + 2] = 1;
+                }
+                else if (randCol == 7){
+                    game[randRow][randCol] = 1;
+                    game[randRow][randCol - 1] = 1;
+                    game[randRow][randCol - 2] = 1;
+                }
+                else {
+                    game[randRow][randCol] = 1;
+                    game[randRow][randCol + 1] = 1;
+                    game[randRow][randCol - 1] = 1;
+                }
+
+            }
+            else {
+                randRow = random.nextInt(8);
+                randCol = random.nextInt(8);
+                if (randRow == 0){
+                    game[randRow][randCol] = 1;
+                    game[randRow + 1][randCol] = 1;
+                    game[randRow + 2][randCol] = 1;
+                }
+                else if (randRow == 7){
+                    game[randRow][randCol] = 1;
+                    game[randRow - 1][randCol] = 1;
+                    game[randRow - 2][randCol] = 1;
+                }
+                else {
+                    game[randRow][randCol] = 1;
+                    game[randRow + 1][randCol] = 1;
+                    game[randRow - 1][randCol] = 1;
+                }
+
+
+            }
+            
+        }
+        return game;
     }
 }

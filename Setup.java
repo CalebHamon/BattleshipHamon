@@ -431,4 +431,61 @@ public class Setup {
         }
         return game;
     }
+
+    public int[][] SetupCPUReg() {
+        numCols = 9;
+        numRows = 9;
+        int[][] game = new int[numRows][numCols];
+        Random random = new Random();
+        int upperBound = 5;
+        int rVc;
+        int randRow;
+        int randCol;
+        for (int q = 0; q < upperBound; q++){
+            rVc = random.nextInt(2);
+            if (rVc == 0){
+                randRow = random.nextInt(10);
+                randCol = random.nextInt(10);
+                if (randCol == 0){
+                    game[randRow][randCol] = 1;
+                    game[randRow][randCol + 1] = 1;
+                    game[randRow][randCol + 2] = 1;
+                }
+                else if (randCol == 9){
+                    game[randRow][randCol] = 1;
+                    game[randRow][randCol - 1] = 1;
+                    game[randRow][randCol - 2] = 1;
+                }
+                else {
+                    game[randRow][randCol] = 1;
+                    game[randRow][randCol + 1] = 1;
+                    game[randRow][randCol - 1] = 1;
+                }
+
+            }
+            else {
+                randRow = random.nextInt(10);
+                randCol = random.nextInt(10);
+                if (randRow == 0){
+                    game[randRow][randCol] = 1;
+                    game[randRow + 1][randCol] = 1;
+                    game[randRow + 2][randCol] = 1;
+                }
+                else if (randRow == 9){
+                    game[randRow][randCol] = 1;
+                    game[randRow - 1][randCol] = 1;
+                    game[randRow - 2][randCol] = 1;
+                }
+                else {
+                    game[randRow][randCol] = 1;
+                    game[randRow + 1][randCol] = 1;
+                    game[randRow - 1][randCol] = 1;
+                }
+
+
+            }
+            
+        }
+        return game;
+    }
 }

@@ -26,7 +26,7 @@ public class CPUGame {
     // that would be in the middle
     // TO DO: Correct names of ships, I think some of them are off still.
 
-    public void SetupFas() {
+    public int[][] SetupFas() {
         int containerCols = 0;
         int containerRows = 0;
         int fNumCols = 8;
@@ -38,24 +38,30 @@ public class CPUGame {
             newRow = scan.nextInt() - 1;
             System.out.println("What Column");
             newCol = scan.nextInt() - 1;
-            if (q == 0) {
-                game[newRow][newCol] = 1;
-                containerCols = newCol;
-                containerRows = newRow;
-            } else if (newCol == containerCols) {
-                if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
+            if (game[newRow][newCol] == 1) {
+
+                if (q == 0) {
                     game[newRow][newCol] = 1;
                     containerCols = newCol;
                     containerRows = newRow;
-                } else {
-                    q = q - 1;
-                    System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
-                }
-            } else if (newRow == containerRows) {
-                if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
-                    game[newRow][newCol] = 1;
-                    containerCols = newCol;
-                    containerRows = newRow;
+                } else if (newCol == containerCols) {
+                    if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
+                        game[newRow][newCol] = 1;
+                        containerCols = newCol;
+                        containerRows = newRow;
+                    } else {
+                        q = q - 1;
+                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
+                    }
+                } else if (newRow == containerRows) {
+                    if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
+                        game[newRow][newCol] = 1;
+                        containerCols = newCol;
+                        containerRows = newRow;
+                    } else {
+                        q = q - 1;
+                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
+                    }
                 } else {
                     q = q - 1;
                     System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
@@ -71,24 +77,30 @@ public class CPUGame {
             newRow = scan.nextInt() - 1;
             System.out.println("What Column");
             newCol = scan.nextInt() - 1;
-            if (q == 0) {
-                game[newRow][newCol] = 1;
-                containerCols = newCol;
-                containerRows = newRow;
-            } else if (newCol == containerCols) {
-                if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
+            if (game[newRow][newCol] == 1) {
+
+                if (q == 0) {
                     game[newRow][newCol] = 1;
                     containerCols = newCol;
                     containerRows = newRow;
-                } else {
-                    q = q - 1;
-                    System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
-                }
-            } else if (newRow == containerRows) {
-                if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
-                    game[newRow][newCol] = 1;
-                    containerCols = newCol;
-                    containerRows = newRow;
+                } else if (newCol == containerCols) {
+                    if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
+                        game[newRow][newCol] = 1;
+                        containerCols = newCol;
+                        containerRows = newRow;
+                    } else {
+                        q = q - 1;
+                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
+                    }
+                } else if (newRow == containerRows) {
+                    if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
+                        game[newRow][newCol] = 1;
+                        containerCols = newCol;
+                        containerRows = newRow;
+                    } else {
+                        q = q - 1;
+                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
+                    }
                 } else {
                     q = q - 1;
                     System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
@@ -104,24 +116,30 @@ public class CPUGame {
             newRow = scan.nextInt() - 1;
             System.out.println("What Column");
             newCol = scan.nextInt() - 1;
-            if (q == 0) {
-                game[newRow][newCol] = 1;
-                containerCols = newCol;
-                containerRows = newRow;
-            } else if (newCol == containerCols) {
-                if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
+            if (game[newRow][newCol] == 1) {
+
+                if (q == 0) {
                     game[newRow][newCol] = 1;
                     containerCols = newCol;
                     containerRows = newRow;
-                } else {
-                    q = q - 1;
-                    System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
-                }
-            } else if (newRow == containerRows) {
-                if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
-                    game[newRow][newCol] = 1;
-                    containerCols = newCol;
-                    containerRows = newRow;
+                } else if (newCol == containerCols) {
+                    if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
+                        game[newRow][newCol] = 1;
+                        containerCols = newCol;
+                        containerRows = newRow;
+                    } else {
+                        q = q - 1;
+                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
+                    }
+                } else if (newRow == containerRows) {
+                    if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
+                        game[newRow][newCol] = 1;
+                        containerCols = newCol;
+                        containerRows = newRow;
+                    } else {
+                        q = q - 1;
+                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
+                    }
                 } else {
                     q = q - 1;
                     System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
@@ -141,10 +159,11 @@ public class CPUGame {
             }
             System.out.println("");
         }
+        return game;
 
     }
 
-    public void SetupReg() {
+    public int SetupReg() {
         int containerCols = 0;
         int containerRows = 0;
         Scanner scan = new Scanner(System.in);
@@ -154,24 +173,30 @@ public class CPUGame {
             newRow = scan.nextInt() - 1;
             System.out.println("What Column");
             newCol = scan.nextInt() - 1;
-            if (q == 0) {
-                game[newRow][newCol] = 1;
-                containerCols = newCol;
-                containerRows = newRow;
-            } else if (newCol == containerCols) {
-                if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
+            if (game[newRow][newCol] == 1) {
+
+                if (q == 0) {
                     game[newRow][newCol] = 1;
                     containerCols = newCol;
                     containerRows = newRow;
-                } else {
-                    q = q - 1;
-                    System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
-                }
-            } else if (newRow == containerRows) {
-                if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
-                    game[newRow][newCol] = 1;
-                    containerCols = newCol;
-                    containerRows = newRow;
+                } else if (newCol == containerCols) {
+                    if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
+                        game[newRow][newCol] = 1;
+                        containerCols = newCol;
+                        containerRows = newRow;
+                    } else {
+                        q = q - 1;
+                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
+                    }
+                } else if (newRow == containerRows) {
+                    if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
+                        game[newRow][newCol] = 1;
+                        containerCols = newCol;
+                        containerRows = newRow;
+                    } else {
+                        q = q - 1;
+                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
+                    }
                 } else {
                     q = q - 1;
                     System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
@@ -179,6 +204,7 @@ public class CPUGame {
             } else {
                 q = q - 1;
                 System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
+
             }
         }
         System.out.println("Choose Location of Battleship");
@@ -187,24 +213,30 @@ public class CPUGame {
             newRow = scan.nextInt() - 1;
             System.out.println("What Column");
             newCol = scan.nextInt() - 1;
-            if (q == 0) {
-                game[newRow][newCol] = 1;
-                containerCols = newCol;
-                containerRows = newRow;
-            } else if (newCol == containerCols) {
-                if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
+            if (game[newRow][newCol] == 1) {
+
+                if (q == 0) {
                     game[newRow][newCol] = 1;
                     containerCols = newCol;
                     containerRows = newRow;
-                } else {
-                    q = q - 1;
-                    System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
-                }
-            } else if (newRow == containerRows) {
-                if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
-                    game[newRow][newCol] = 1;
-                    containerCols = newCol;
-                    containerRows = newRow;
+                } else if (newCol == containerCols) {
+                    if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
+                        game[newRow][newCol] = 1;
+                        containerCols = newCol;
+                        containerRows = newRow;
+                    } else {
+                        q = q - 1;
+                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
+                    }
+                } else if (newRow == containerRows) {
+                    if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
+                        game[newRow][newCol] = 1;
+                        containerCols = newCol;
+                        containerRows = newRow;
+                    } else {
+                        q = q - 1;
+                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
+                    }
                 } else {
                     q = q - 1;
                     System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
@@ -220,24 +252,30 @@ public class CPUGame {
             newRow = scan.nextInt() - 1;
             System.out.println("What Column");
             newCol = scan.nextInt() - 1;
-            if (q == 0) {
-                game[newRow][newCol] = 1;
-                containerCols = newCol;
-                containerRows = newRow;
-            } else if (newCol == containerCols) {
-                if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
+            if (game[newRow][newCol] == 1) {
+
+                if (q == 0) {
                     game[newRow][newCol] = 1;
                     containerCols = newCol;
                     containerRows = newRow;
-                } else {
-                    q = q - 1;
-                    System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
-                }
-            } else if (newRow == containerRows) {
-                if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
-                    game[newRow][newCol] = 1;
-                    containerCols = newCol;
-                    containerRows = newRow;
+                } else if (newCol == containerCols) {
+                    if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
+                        game[newRow][newCol] = 1;
+                        containerCols = newCol;
+                        containerRows = newRow;
+                    } else {
+                        q = q - 1;
+                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
+                    }
+                } else if (newRow == containerRows) {
+                    if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
+                        game[newRow][newCol] = 1;
+                        containerCols = newCol;
+                        containerRows = newRow;
+                    } else {
+                        q = q - 1;
+                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
+                    }
                 } else {
                     q = q - 1;
                     System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
@@ -253,24 +291,30 @@ public class CPUGame {
             newRow = scan.nextInt() - 1;
             System.out.println("What Column");
             newCol = scan.nextInt() - 1;
-            if (q == 0) {
-                game[newRow][newCol] = 1;
-                containerCols = newCol;
-                containerRows = newRow;
-            } else if (newCol == containerCols) {
-                if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
+            if (game[newRow][newCol] == 1) {
+
+                if (q == 0) {
                     game[newRow][newCol] = 1;
                     containerCols = newCol;
                     containerRows = newRow;
-                } else {
-                    q = q - 1;
-                    System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
-                }
-            } else if (newRow == containerRows) {
-                if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
-                    game[newRow][newCol] = 1;
-                    containerCols = newCol;
-                    containerRows = newRow;
+                } else if (newCol == containerCols) {
+                    if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
+                        game[newRow][newCol] = 1;
+                        containerCols = newCol;
+                        containerRows = newRow;
+                    } else {
+                        q = q - 1;
+                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
+                    }
+                } else if (newRow == containerRows) {
+                    if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
+                        game[newRow][newCol] = 1;
+                        containerCols = newCol;
+                        containerRows = newRow;
+                    } else {
+                        q = q - 1;
+                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
+                    }
                 } else {
                     q = q - 1;
                     System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
@@ -286,24 +330,30 @@ public class CPUGame {
             newRow = scan.nextInt() - 1;
             System.out.println("What Column");
             newCol = scan.nextInt() - 1;
-            if (q == 0) {
-                game[newRow][newCol] = 1;
-                containerCols = newCol;
-                containerRows = newRow;
-            } else if (newCol == containerCols) {
-                if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
+            if (game[newRow][newCol] == 1) {
+
+                if (q == 0) {
                     game[newRow][newCol] = 1;
                     containerCols = newCol;
                     containerRows = newRow;
-                } else {
-                    q = q - 1;
-                    System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
-                }
-            } else if (newRow == containerRows) {
-                if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
-                    game[newRow][newCol] = 1;
-                    containerCols = newCol;
-                    containerRows = newRow;
+                } else if (newCol == containerCols) {
+                    if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
+                        game[newRow][newCol] = 1;
+                        containerCols = newCol;
+                        containerRows = newRow;
+                    } else {
+                        q = q - 1;
+                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
+                    }
+                } else if (newRow == containerRows) {
+                    if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
+                        game[newRow][newCol] = 1;
+                        containerCols = newCol;
+                        containerRows = newRow;
+                    } else {
+                        q = q - 1;
+                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
+                    }
                 } else {
                     q = q - 1;
                     System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
@@ -314,6 +364,7 @@ public class CPUGame {
             }
 
         }
+        return game[newRow][newCol];
 
         // scan.close();
 

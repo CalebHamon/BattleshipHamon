@@ -19,6 +19,8 @@ public class Tester {
         Board b1 = new Board();
         CPUGame c1 = new CPUGame();
         ManualGame m1 = new ManualGame();
+        int[][] game = new int[8][8];
+        game = c1.SetupFas();
         if (b1.Instructions()){
 
             if(b1.WhatGame()){

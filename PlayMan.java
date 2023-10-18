@@ -12,156 +12,106 @@ public class PlayMan {
 
     public static int FastManColGuessU1() {
 
-        try (Scanner scan = new Scanner(System.in)) {
-            int colGuess;
-            System.out.println("Place a guess!");
-            do {
-                System.out.println("What Col Would you like to guess?");
-                colGuess = scan.nextInt();
-            } while (!(colGuess < 1 && colGuess > 8));
-            // scan.close();
-            return colGuess;
-        } catch (Exception e) {
-            System.out.println("Something went wrong, please rerun " + e.toString());
-        }
-        return 11;
+        Scanner scan = new Scanner(System.in);
+        int colGuess;
+        System.out.println("Place a guess!");
+        do {
+            System.out.println("What Col Would you like to guess?");
+            colGuess = scan.nextInt();
+        } while (!(colGuess < 1 && colGuess > 8));
+        // scan.close();
+        return colGuess;
 
     }
 
     public static int FastManRowGuessU1() {
 
-        try (Scanner scan = new Scanner(System.in)) {
-            int rowGuess;
-            do {
-                System.out.println("What Row Would you like to guess?");
-                rowGuess = scan.nextInt();
-            } while (!(rowGuess < 1 && rowGuess > 8));
-            // scan.close();
-            return rowGuess;
-        }
-
-        catch (Exception e) {
-            System.out.println("Something went wrong, please rerun " + e.toString());
-        }
-        return 11;
-
+        Scanner scan = new Scanner(System.in);
+        int rowGuess;
+        do {
+            System.out.println("What Row Would you like to guess?");
+            rowGuess = scan.nextInt();
+        } while (!(rowGuess < 1 && rowGuess > 8));
+        // scan.close();
+        return rowGuess;
     }
 
     public static int RegManColGuessU1() {
 
-        try (Scanner scan = new Scanner(System.in)) {
-            int colGuess;
-            System.out.println("Place a guess!");
-            do {
-                System.out.println("What Col Would you like to guess?");
-                colGuess = scan.nextInt();
-            } while (!(colGuess < 1 && colGuess > 10));
-            // scan.close();
-            return colGuess;
-        }
-
-        catch (Exception e) {
-            System.out.println("Something went wrong, please rerun " + e.toString());
-        }
-        return 11;
-
+        Scanner scan = new Scanner(System.in);
+        int colGuess;
+        System.out.println("Place a guess!");
+        do {
+            System.out.println("What Col Would you like to guess?");
+            colGuess = scan.nextInt();
+        } while (!(colGuess < 1 && colGuess > 10));
+        // scan.close();
+        return colGuess;
     }
 
     public static int RegManRowGuessU1() {
 
-        try (Scanner scan = new Scanner(System.in)) {
-            int rowGuess;
-            do {
-                System.out.println("What Row Would you like to guess?");
-                rowGuess = scan.nextInt();
-            } while (!(rowGuess < 1 && rowGuess > 10));
-            // scan.close();
-            return rowGuess;
-        }
-
-        catch (Exception e) {
-            System.out.println("Something went wrong, please rerun " + e.toString());
-        }
-        return 11;
-
+        Scanner scan = new Scanner(System.in);
+        int rowGuess;
+        do {
+            System.out.println("What Row Would you like to guess?");
+            rowGuess = scan.nextInt();
+        } while (!(rowGuess < 1 && rowGuess > 10));
+        // scan.close();
+        return rowGuess;
     }
 
     public static int FastManColGuessU2() {
 
-        try (Scanner scan = new Scanner(System.in)) {
-            int colGuess;
-            System.out.println("Place a guess!");
-            do {
-                System.out.println("What Col Would you like to guess?");
-                colGuess = scan.nextInt();
-            } while (!(colGuess < 1 && colGuess > 8));
-            // scan.close();
-            return colGuess;
-        }
-
-        catch (Exception e) {
-            System.out.println("Something went wrong, please rerun " + e.toString());
-        }
-        return 11;
+        Scanner scan = new Scanner(System.in);
+        int colGuess;
+        System.out.println("Place a guess!");
+        do {
+            System.out.println("What Col Would you like to guess?");
+            colGuess = scan.nextInt();
+        } while (!(colGuess < 1 && colGuess > 8));
+        // scan.close();
+        return colGuess;
 
     }
 
     public static int FastManRowGuessU2() {
 
-        try (Scanner scan = new Scanner(System.in)) {
-            int rowGuess;
-            do {
-                System.out.println("What Row Would you like to guess?");
-                rowGuess = scan.nextInt();
-            } while (!(rowGuess < 1 && rowGuess > 8));
-            // scan.close();
-            return rowGuess;
-        }
-
-        catch (Exception e) {
-            System.out.println("Something went wrong, please rerun " + e.toString());
-        }
-        return 11;
+        Scanner scan = new Scanner(System.in);
+        int rowGuess;
+        do {
+            System.out.println("What Row Would you like to guess?");
+            rowGuess = scan.nextInt();
+        } while (!(rowGuess < 1 && rowGuess > 8));
+        // scan.close();
+        return rowGuess;
 
     }
 
     public static int RegManColGuessU2() {
 
-        try (Scanner scan = new Scanner(System.in)) {
-            int colGuess;
-            System.out.println("Place a guess!");
-            do {
-                System.out.println("What Col Would you like to guess?");
-                colGuess = scan.nextInt();
-            } while (!(colGuess < 1 && colGuess > 10));
-            // scan.close();
-            return colGuess;
-        }
-
-        catch (Exception e) {
-            System.out.println("Something went wrong, please rerun " + e.toString());
-        }
-        return 11;
+        Scanner scan = new Scanner(System.in);
+        int colGuess;
+        System.out.println("Place a guess!");
+        do {
+            System.out.println("What Col Would you like to guess?");
+            colGuess = scan.nextInt();
+        } while (!(colGuess < 1 && colGuess > 10));
+        // scan.close();
+        return colGuess;
 
     }
 
     public static int RegManRowGuessU2() {
 
-        try (Scanner scan = new Scanner(System.in)) {
-            int rowGuess;
-            do {
-                System.out.println("What Row Would you like to guess?");
-                rowGuess = scan.nextInt();
-            } while (!(rowGuess < 1 && rowGuess > 10));
-            // scan.close();
-            return rowGuess;
-        }
-
-        catch (Exception e) {
-            System.out.println("Something went wrong, please rerun " + e.toString());
-        }
-        return 11;
-
+        Scanner scan = new Scanner(System.in);
+        int rowGuess;
+        do {
+            System.out.println("What Row Would you like to guess?");
+            rowGuess = scan.nextInt();
+        } while (!(rowGuess < 1 && rowGuess > 10));
+        // scan.close();
+        return rowGuess;
     }
 
 }

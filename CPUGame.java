@@ -31,119 +31,115 @@ public class CPUGame {
         int containerRows = 0;
         int fNumCols = 8;
         int fNumRows = 8;
-        try (Scanner scan = new Scanner(System.in)) {
-            System.out.println("Choose Location of Carrier");
-            for (int q = 0; q < 3; q++) {
-                System.out.println("What Row would you like to place the peg of your cruiser in?");
-                newRow = scan.nextInt() - 1;
-                System.out.println("What Column");
-                newCol = scan.nextInt() - 1;
-                if (q == 0) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Choose Location of Carrier");
+        for (int q = 0; q < 3; q++) {
+            System.out.println("What Row would you like to place the peg of your cruiser in?");
+            newRow = scan.nextInt() - 1;
+            System.out.println("What Column");
+            newCol = scan.nextInt() - 1;
+            if (q == 0) {
+                game[newRow][newCol] = 1;
+                containerCols = newCol;
+                containerRows = newRow;
+            } else if (newCol == containerCols) {
+                if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
                     game[newRow][newCol] = 1;
                     containerCols = newCol;
                     containerRows = newRow;
-                } else if (newCol == containerCols) {
-                    if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
-                        game[newRow][newCol] = 1;
-                        containerCols = newCol;
-                        containerRows = newRow;
-                    } else {
-                        q = q - 1;
-                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
-                    }
-                } else if (newRow == containerRows) {
-                    if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
-                        game[newRow][newCol] = 1;
-                        containerCols = newCol;
-                        containerRows = newRow;
-                    } else {
-                        q = q - 1;
-                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
-                    }
                 } else {
                     q = q - 1;
                     System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
                 }
+            } else if (newRow == containerRows) {
+                if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
+                    game[newRow][newCol] = 1;
+                    containerCols = newCol;
+                    containerRows = newRow;
+                } else {
+                    q = q - 1;
+                    System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
+                }
+            } else {
+                q = q - 1;
+                System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
             }
-            System.out.println("Choose Location of Submarine");
-            for (int q = 0; q < 3; q++) {
-                System.out.println("What Row would you like to place the peg of your submarine in?");
-                newRow = scan.nextInt() - 1;
-                System.out.println("What Column");
-                newCol = scan.nextInt() - 1;
-                if (q == 0) {
+        }
+        System.out.println("Choose Location of Submarine");
+        for (int q = 0; q < 3; q++) {
+            System.out.println("What Row would you like to place the peg of your submarine in?");
+            newRow = scan.nextInt() - 1;
+            System.out.println("What Column");
+            newCol = scan.nextInt() - 1;
+            if (q == 0) {
+                game[newRow][newCol] = 1;
+                containerCols = newCol;
+                containerRows = newRow;
+            } else if (newCol == containerCols) {
+                if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
                     game[newRow][newCol] = 1;
                     containerCols = newCol;
                     containerRows = newRow;
-                } else if (newCol == containerCols) {
-                    if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
-                        game[newRow][newCol] = 1;
-                        containerCols = newCol;
-                        containerRows = newRow;
-                    } else {
-                        q = q - 1;
-                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
-                    }
-                } else if (newRow == containerRows) {
-                    if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
-                        game[newRow][newCol] = 1;
-                        containerCols = newCol;
-                        containerRows = newRow;
-                    } else {
-                        q = q - 1;
-                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
-                    }
                 } else {
                     q = q - 1;
                     System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
                 }
+            } else if (newRow == containerRows) {
+                if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
+                    game[newRow][newCol] = 1;
+                    containerCols = newCol;
+                    containerRows = newRow;
+                } else {
+                    q = q - 1;
+                    System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
+                }
+            } else {
+                q = q - 1;
+                System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
             }
-            System.out.println("Choose Location of Destroyer");
-            for (int q = 0; q < 2; q++) {
-                System.out.println("What Row would you like to place the peg of your destroyer in?");
-                newRow = scan.nextInt() - 1;
-                System.out.println("What Column");
-                newCol = scan.nextInt() - 1;
-                if (q == 0) {
+        }
+        System.out.println("Choose Location of Destroyer");
+        for (int q = 0; q < 2; q++) {
+            System.out.println("What Row would you like to place the peg of your destroyer in?");
+            newRow = scan.nextInt() - 1;
+            System.out.println("What Column");
+            newCol = scan.nextInt() - 1;
+            if (q == 0) {
+                game[newRow][newCol] = 1;
+                containerCols = newCol;
+                containerRows = newRow;
+            } else if (newCol == containerCols) {
+                if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
                     game[newRow][newCol] = 1;
                     containerCols = newCol;
                     containerRows = newRow;
-                } else if (newCol == containerCols) {
-                    if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
-                        game[newRow][newCol] = 1;
-                        containerCols = newCol;
-                        containerRows = newRow;
-                    } else {
-                        q = q - 1;
-                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
-                    }
-                } else if (newRow == containerRows) {
-                    if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
-                        game[newRow][newCol] = 1;
-                        containerCols = newCol;
-                        containerRows = newRow;
-                    } else {
-                        q = q - 1;
-                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
-                    }
                 } else {
                     q = q - 1;
                     System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
                 }
+            } else if (newRow == containerRows) {
+                if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
+                    game[newRow][newCol] = 1;
+                    containerCols = newCol;
+                    containerRows = newRow;
+                } else {
+                    q = q - 1;
+                    System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
+                }
+            } else {
+                q = q - 1;
+                System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
+            }
+        }
+        System.out.println("");
+        System.out.println("Your Board:");
+        System.out.println("");
+        for (int p = 0; p < fNumCols; p++) {
+            for (int c = 0; c < fNumRows; c++) {
+                System.out.print(game[p][c]);
+                System.out.print(" ");
             }
             System.out.println("");
-            System.out.println("Your Board:");
-            System.out.println("");
-            for (int p = 0; p < fNumCols; p++) {
-                for (int c = 0; c < fNumRows; c++) {
-                    System.out.print(game[p][c]);
-                    System.out.print(" ");
-                }
-                System.out.println("");
-            }
-
-        } catch (Exception e) {
-            System.out.println("Something went wrong, please rerun " + e.toString());
         }
 
     }
@@ -151,176 +147,172 @@ public class CPUGame {
     public void SetupReg() {
         int containerCols = 0;
         int containerRows = 0;
-        try (Scanner scan = new Scanner(System.in)) {
-            System.out.println("Choose Location of Carrier");
-            for (int q = 0; q < 5; q++) {
-                System.out.println("What Row would you like to place the peg of your carrier in?");
-                newRow = scan.nextInt() - 1;
-                System.out.println("What Column");
-                newCol = scan.nextInt() - 1;
-                if (q == 0) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Choose Location of Carrier");
+        for (int q = 0; q < 5; q++) {
+            System.out.println("What Row would you like to place the peg of your carrier in?");
+            newRow = scan.nextInt() - 1;
+            System.out.println("What Column");
+            newCol = scan.nextInt() - 1;
+            if (q == 0) {
+                game[newRow][newCol] = 1;
+                containerCols = newCol;
+                containerRows = newRow;
+            } else if (newCol == containerCols) {
+                if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
                     game[newRow][newCol] = 1;
                     containerCols = newCol;
                     containerRows = newRow;
-                } else if (newCol == containerCols) {
-                    if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
-                        game[newRow][newCol] = 1;
-                        containerCols = newCol;
-                        containerRows = newRow;
-                    } else {
-                        q = q - 1;
-                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
-                    }
-                } else if (newRow == containerRows) {
-                    if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
-                        game[newRow][newCol] = 1;
-                        containerCols = newCol;
-                        containerRows = newRow;
-                    } else {
-                        q = q - 1;
-                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
-                    }
                 } else {
                     q = q - 1;
                     System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
                 }
+            } else if (newRow == containerRows) {
+                if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
+                    game[newRow][newCol] = 1;
+                    containerCols = newCol;
+                    containerRows = newRow;
+                } else {
+                    q = q - 1;
+                    System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
+                }
+            } else {
+                q = q - 1;
+                System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
             }
-            System.out.println("Choose Location of Battleship");
-            for (int q = 0; q < 4; q++) {
-                System.out.println("What Row would you like to place the peg of your battleship in?");
-                newRow = scan.nextInt() - 1;
-                System.out.println("What Column");
-                newCol = scan.nextInt() - 1;
-                if (q == 0) {
+        }
+        System.out.println("Choose Location of Battleship");
+        for (int q = 0; q < 4; q++) {
+            System.out.println("What Row would you like to place the peg of your battleship in?");
+            newRow = scan.nextInt() - 1;
+            System.out.println("What Column");
+            newCol = scan.nextInt() - 1;
+            if (q == 0) {
+                game[newRow][newCol] = 1;
+                containerCols = newCol;
+                containerRows = newRow;
+            } else if (newCol == containerCols) {
+                if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
                     game[newRow][newCol] = 1;
                     containerCols = newCol;
                     containerRows = newRow;
-                } else if (newCol == containerCols) {
-                    if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
-                        game[newRow][newCol] = 1;
-                        containerCols = newCol;
-                        containerRows = newRow;
-                    } else {
-                        q = q - 1;
-                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
-                    }
-                } else if (newRow == containerRows) {
-                    if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
-                        game[newRow][newCol] = 1;
-                        containerCols = newCol;
-                        containerRows = newRow;
-                    } else {
-                        q = q - 1;
-                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
-                    }
                 } else {
                     q = q - 1;
                     System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
                 }
+            } else if (newRow == containerRows) {
+                if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
+                    game[newRow][newCol] = 1;
+                    containerCols = newCol;
+                    containerRows = newRow;
+                } else {
+                    q = q - 1;
+                    System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
+                }
+            } else {
+                q = q - 1;
+                System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
             }
-            System.out.println("Choose Location of Cruiser");
-            for (int q = 0; q < 3; q++) {
-                System.out.println("What Row would you like to place the first peg of your cruiser in?");
-                newRow = scan.nextInt() - 1;
-                System.out.println("What Column");
-                newCol = scan.nextInt() - 1;
-                if (q == 0) {
+        }
+        System.out.println("Choose Location of Cruiser");
+        for (int q = 0; q < 3; q++) {
+            System.out.println("What Row would you like to place the first peg of your cruiser in?");
+            newRow = scan.nextInt() - 1;
+            System.out.println("What Column");
+            newCol = scan.nextInt() - 1;
+            if (q == 0) {
+                game[newRow][newCol] = 1;
+                containerCols = newCol;
+                containerRows = newRow;
+            } else if (newCol == containerCols) {
+                if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
                     game[newRow][newCol] = 1;
                     containerCols = newCol;
                     containerRows = newRow;
-                } else if (newCol == containerCols) {
-                    if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
-                        game[newRow][newCol] = 1;
-                        containerCols = newCol;
-                        containerRows = newRow;
-                    } else {
-                        q = q - 1;
-                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
-                    }
-                } else if (newRow == containerRows) {
-                    if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
-                        game[newRow][newCol] = 1;
-                        containerCols = newCol;
-                        containerRows = newRow;
-                    } else {
-                        q = q - 1;
-                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
-                    }
                 } else {
                     q = q - 1;
                     System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
                 }
+            } else if (newRow == containerRows) {
+                if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
+                    game[newRow][newCol] = 1;
+                    containerCols = newCol;
+                    containerRows = newRow;
+                } else {
+                    q = q - 1;
+                    System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
+                }
+            } else {
+                q = q - 1;
+                System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
             }
-            System.out.println("Choose Location of Submarine");
-            for (int q = 0; q < 3; q++) {
-                System.out.println("What Row would you like to place the first peg of your submarine in?");
-                newRow = scan.nextInt() - 1;
-                System.out.println("What Column");
-                newCol = scan.nextInt() - 1;
-                if (q == 0) {
+        }
+        System.out.println("Choose Location of Submarine");
+        for (int q = 0; q < 3; q++) {
+            System.out.println("What Row would you like to place the first peg of your submarine in?");
+            newRow = scan.nextInt() - 1;
+            System.out.println("What Column");
+            newCol = scan.nextInt() - 1;
+            if (q == 0) {
+                game[newRow][newCol] = 1;
+                containerCols = newCol;
+                containerRows = newRow;
+            } else if (newCol == containerCols) {
+                if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
                     game[newRow][newCol] = 1;
                     containerCols = newCol;
                     containerRows = newRow;
-                } else if (newCol == containerCols) {
-                    if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
-                        game[newRow][newCol] = 1;
-                        containerCols = newCol;
-                        containerRows = newRow;
-                    } else {
-                        q = q - 1;
-                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
-                    }
-                } else if (newRow == containerRows) {
-                    if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
-                        game[newRow][newCol] = 1;
-                        containerCols = newCol;
-                        containerRows = newRow;
-                    } else {
-                        q = q - 1;
-                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
-                    }
                 } else {
                     q = q - 1;
                     System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
                 }
+            } else if (newRow == containerRows) {
+                if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
+                    game[newRow][newCol] = 1;
+                    containerCols = newCol;
+                    containerRows = newRow;
+                } else {
+                    q = q - 1;
+                    System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
+                }
+            } else {
+                q = q - 1;
+                System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
             }
-            System.out.println("Choose Location of Destroyer");
-            for (int q = 0; q < 2; q++) {
-                System.out.println("What Row would you like to place the first peg of your destroyer in?");
-                newRow = scan.nextInt() - 1;
-                System.out.println("What Column");
-                newCol = scan.nextInt() - 1;
-                if (q == 0) {
+        }
+        System.out.println("Choose Location of Destroyer");
+        for (int q = 0; q < 2; q++) {
+            System.out.println("What Row would you like to place the first peg of your destroyer in?");
+            newRow = scan.nextInt() - 1;
+            System.out.println("What Column");
+            newCol = scan.nextInt() - 1;
+            if (q == 0) {
+                game[newRow][newCol] = 1;
+                containerCols = newCol;
+                containerRows = newRow;
+            } else if (newCol == containerCols) {
+                if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
                     game[newRow][newCol] = 1;
                     containerCols = newCol;
                     containerRows = newRow;
-                } else if (newCol == containerCols) {
-                    if ((newRow == containerRows + 1) || (newRow == containerRows - 1)) {
-                        game[newRow][newCol] = 1;
-                        containerCols = newCol;
-                        containerRows = newRow;
-                    } else {
-                        q = q - 1;
-                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
-                    }
-                } else if (newRow == containerRows) {
-                    if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
-                        game[newRow][newCol] = 1;
-                        containerCols = newCol;
-                        containerRows = newRow;
-                    } else {
-                        q = q - 1;
-                        System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
-                    }
                 } else {
                     q = q - 1;
                     System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
                 }
-
+            } else if (newRow == containerRows) {
+                if ((newCol == containerCols + 1) || (newCol == containerCols - 1)) {
+                    game[newRow][newCol] = 1;
+                    containerCols = newCol;
+                    containerRows = newRow;
+                } else {
+                    q = q - 1;
+                    System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
+                }
+            } else {
+                q = q - 1;
+                System.out.println("Try Again. Make Sure You Place Your Ships Right Next To Each Other");
             }
 
-        } catch (Exception e) {
-            System.out.println("Something went wrong, please rerun " + e.toString());
         }
 
         // scan.close();

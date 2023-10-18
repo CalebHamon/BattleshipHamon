@@ -107,4 +107,22 @@ public class Board {
             System.out.println("");
         }
     }
+
+    public boolean RandoNo() {
+        int choice;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Would you like to place your ships manually or let the CPU do it?");
+        System.out.println("Type '1' for manually, '2' for randomly");
+        do {
+        choice = scan.nextInt();
+        }
+        while (!(choice == 1 || choice == 2));
+        if (choice == 1){
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
 }

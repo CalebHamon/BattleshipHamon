@@ -53,6 +53,9 @@ public class PlayCpu {
 
     }
 
+    //Using Random to give me random points to guess where the ship is
+    //TODO: use logic so the CPU makes educated guesses rather than just guessing
+
     public int RegCPURowGuess() {
 
         Scanner scan = new Scanner(System.in);

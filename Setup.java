@@ -375,6 +375,10 @@ public class Setup {
 
     }
 
+    //These are the random setups for both fast game and normal
+    //Makes sure the ship will not go off the board with certain ships by conditionals for each ship
+    //TODO: Make sure ships dont have the ability to overlap each other.
+
     public int[][] SetupCPUFas() {
         numCols = 8;
         numRows = 8;

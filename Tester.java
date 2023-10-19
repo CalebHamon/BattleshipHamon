@@ -23,6 +23,15 @@ public class Tester {
     // Also need to create a board for guessing, though shouldnt be too hard
     // considering I have already made another method similar to it
 
+
+
+    //10/19/23
+    //I have built everything out in Tester, should be working
+    //I havent been able to test what happens in a Man game win/loss
+    //Everything else has been tested though.
+    //For Next Time: Make sure to put less in tester
+    //I think some of the things I did in tester could have been made in other methods, making it easier to implement and debug
+
     public static void main(String[] args) {
         Board board = new Board();
         Board board2 = new Board();
@@ -59,11 +68,11 @@ public class Tester {
                 System.out.println("");
                 System.out.println("1s Indicates HITS and 3s indicate a miss");
                 System.out.println("GOOD LUCK!");
-                do {
+                do { //loops until a game is won
                     System.out.println("YOUR TURN!");
                     guessRow = cpu.FastCPURowGuess();
                     guessCol = cpu.FastCPUColGuess();
-                    if (guessBrdT1[guessRow][guessCol] == 3) {
+                    if (guessBrdT1[guessRow][guessCol] == 3) {//error control for overlaping ships
                         System.out.println("You have guessed here already");
                         System.out.println("Please Try Again");
                         do {
@@ -90,7 +99,7 @@ public class Tester {
                     }
                     guessRow = cpu.FasCPURowGuessRan();
                     guessCol = cpu.FasCPUColGuessRan();
-                    if (guessBrdT2[guessRow][guessCol] == 3) {
+                    if (guessBrdT2[guessRow][guessCol] == 3) {//Cpu guessing, same principles applied
                         do {
                             guessRow = cpu.FastCPURowGuess();
                             guessCol = cpu.FastCPUColGuess();
@@ -119,6 +128,8 @@ public class Tester {
                 }
 
             } else {
+                //Next three are blocks similar are mostly the same
+                //They are all the same logic wise at least
                 int[][] gameBrdU2 = new int[regRow][regCol];
                 int[][] gameBrdU1 = new int[regRow][regCol];
                 int[][] guessBrdT2 = new int[regRow][regCol];
@@ -196,7 +207,8 @@ public class Tester {
                 }
 
             }
-        } else {
+        } else { //These next to blocks are getting rid of CPU and plugging in a new User
+                 //Though is is the same for User 1 as User 2
 
             if (board.WhatGame()) { // would they like to play fast(true) or normal(false)
                 int[][] gameBrdU2 = new int[fasRow][fasCol];

@@ -1,3 +1,8 @@
+/*
+ * Board is a class dedicated to both the board creation, as well as other misc methods.
+ * These methods are mostly decision making, more specifically yes or no questions.
+ * These are designed to then be put into conditionals, to then redirect the path in Tester.
+ */
 import java.util.Scanner;
 
 public class Board {
@@ -86,7 +91,8 @@ public class Board {
     }
 
     // PrintBoard prints the boards for each type of game
-    // Reg(10x10) is bigger than Fast (8x8)
+    // Reg(10x10) is bigger than Fast (8x8) 
+    //This is the same for the following methods that have similar code
 
     public void PrintBoardReg() {
         for (int i = 0; i < numCols; i++) {
@@ -107,6 +113,9 @@ public class Board {
             System.out.println("");
         }
     }
+
+    //Designed to ask the user if they want to place the ships randomly or by themselves
+    //This again is going to go into a conditional statement
 
     public boolean RandoNo() {
         String choice;

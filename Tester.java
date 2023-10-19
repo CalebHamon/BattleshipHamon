@@ -32,7 +32,12 @@ public class Tester {
         PlayCpu cpu = new PlayCpu();
         PlayMan man = new PlayMan();
         int[][] game;
-        int[][] guessBrd;
+        int[][] guessBrdU1;
+        int[][] guessBrdU2;
+        int fasRow = 8;
+        int fasCol = 8;
+        int regRow = 10;
+        int regCol = 10;
         int guessRow;
         int guessCol;
         if (board.Instructions()) { // would they like to play MAN(false) or CPU(true)
@@ -62,9 +67,40 @@ public class Tester {
                     System.out.println("YOUR TURN!");
                     guessRow = cpu.RegCPURowGuess();
                     guessCol = cpu.RegCPUColGuess();
+                    if (game[guessRow][guessCol] ==  3) {
+                        System.out.println("You have guessed here already");
+                        System.out.println("Please Try Again");
+                        do {
+                            guessRow = cpu.RegCPURowGuess();
+                            guessCol = cpu.RegCPUColGuess();
+                        } while (!(game[guessRow][guessCol] ==  3));
+                    }
                     if (game[guessRow][guessCol] ==  1) {
                         System.out.println("HIT!");
-                        guessBrd[guessRow][guessCol] = 1;
+                        guessBrdU1[guessRow][guessCol] = 1;
+                    }
+                    else {
+                        System.out.println("miss");
+                        guessBrdU1[guessRow][guessCol] = 3;
+                    }
+                        System.out.println("Your Board:");
+                        System.out.println("");
+                        for (int p = 0; p < fasCol; p++) {
+                            for (int c = 0; c < fasRow; c++) {
+                                System.out.print(game[p][c]);
+                                System.out.print(" ");
+                            }
+                        System.out.println("");
+                        }
+                    do {
+                        guessRow = cpu.FasCPURowGuessRan();
+                        guessCol = cpu.FasCPURowGuessRan();
+                    } while(!(guessBrdU2[guessRow][guessCol] == 3));
+                    if (guessBrdU2[guessRow][guessCol] == 1){
+                        System.out.println("The CPU Landed a HIT!");
+                    }
+                    else {
+                        System.out.println("The CPU missed");
                     }
                 }
                 while (d)

@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class PlayCpu {
 
@@ -58,6 +59,34 @@ public class PlayCpu {
         } while (!(rowGuess < 1 && rowGuess > 10));
         // scan.close();
         return rowGuess;
+    }
+
+    public int FasCPURowGuessRan() {
+        int rowguess;
+        Random random = new Random();
+        rowguess = random.nextInt(8);
+        return rowguess;
+    }
+   
+    public int FasCPUColGuessRan() {
+        int colguess;
+        Random random = new Random();
+        colguess = random.nextInt(8);
+        return colguess;
+    }
+
+    public int RegCPURowGuessRan() {
+        int rowguess;
+        Random random = new Random();
+        rowguess = random.nextInt(8);
+        return rowguess;
+    }
+
+    public int RegCPUColGuessRan() {
+        int colguess;
+        Random random = new Random();
+        colguess = random.nextInt(8);
+        return colguess;
     }
 
 }

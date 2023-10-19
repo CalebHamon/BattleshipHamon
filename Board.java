@@ -1,3 +1,9 @@
+/**
+     * @author Caleb Hamon
+     * @since 10/19/2023
+     * @version 1.0.0
+     */
+
 /*
  * Board is a class dedicated to both the board creation, as well as other misc methods.
  * These methods are mostly decision making, more specifically yes or no questions.

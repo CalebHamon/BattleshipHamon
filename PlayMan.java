@@ -1,3 +1,10 @@
+/**
+     * @author Caleb Hamon
+     * @since 10/19/2023
+     * @version 1.0.0
+     */
+
+
 import java.util.Scanner;
 
 public class PlayMan {

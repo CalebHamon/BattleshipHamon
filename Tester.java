@@ -28,6 +28,7 @@ public class Tester {
         Setup setup = new Setup();
         PlayCpu cpu = new PlayCpu();
         PlayMan man = new PlayMan();
+        setup.SetupCPUReg();
         int fasRow = 8;
         int fasCol = 8;
         int regRow = 10;

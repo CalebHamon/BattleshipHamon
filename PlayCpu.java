@@ -16,8 +16,9 @@ public class PlayCpu {
         do {
             System.out.println("What Col Would you like to guess?");
             colGuess = scan.nextInt();
-        } while ((colGuess < 1 && colGuess > 8));
+        } while ((colGuess < 1 || colGuess > 8));
         colGuess = colGuess - 1;
+        
         // scan.close();
         return colGuess;
 
@@ -30,7 +31,7 @@ public class PlayCpu {
         do {
             System.out.println("What Row Would you like to guess?");
             rowGuess = scan.nextInt();
-        } while ((rowGuess < 1 && rowGuess > 8));
+        } while ((rowGuess < 1 || rowGuess > 8));
         rowGuess = rowGuess - 1;
         // scan.close();
         return rowGuess;
@@ -45,9 +46,9 @@ public class PlayCpu {
         do {
             System.out.println("What Col Would you like to guess?");
             colGuess = scan.nextInt();
-        } while ((colGuess < 1 && colGuess > 10));
-        // scan.close();
+        } while ((colGuess < 1 || colGuess > 10));
         colGuess = colGuess - 1;
+        // scan.close();
         return colGuess;
 
     }
@@ -55,19 +56,12 @@ public class PlayCpu {
     public int RegCPURowGuess() {
 
         Scanner scan = new Scanner(System.in);
-        int rowGuess = 1;
-        int work = 1;
-        for(int i = 0; i < work; i++ ){
+        int rowGuess;
+        do {
             System.out.println("What Row Would you like to guess?");
             rowGuess = scan.nextInt();
-            rowGuess = rowGuess - 1;
-            if (rowGuess >= 1 && rowGuess <=10){
-                return rowGuess;
-            }
-            else{
-                i = -1;
-            }
-        }
+        } while ((rowGuess < 1 || rowGuess > 10));
+        rowGuess = rowGuess - 1;
         // scan.close();
         return rowGuess;
     }
@@ -78,7 +72,7 @@ public class PlayCpu {
         rowguess = random.nextInt(8);
         return rowguess;
     }
-
+   
     public int FasCPUColGuessRan() {
         int colguess;
         Random random = new Random();

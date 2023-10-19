@@ -18,8 +18,9 @@ public class PlayMan {
         do {
             System.out.println("What Col Would you like to guess?");
             colGuess = scan.nextInt();
-        } while (!(colGuess < 1 && colGuess > 8));
+        } while ((colGuess < 1 && colGuess > 8));
         // scan.close();
+        colGuess = colGuess - 1;
         return colGuess;
 
     }
@@ -31,8 +32,9 @@ public class PlayMan {
         do {
             System.out.println("What Row Would you like to guess?");
             rowGuess = scan.nextInt();
-        } while (!(rowGuess < 1 && rowGuess > 8));
+        } while ((rowGuess < 1 || rowGuess > 8));
         // scan.close();
+        rowGuess = rowGuess - 1;
         return rowGuess;
     }
 
@@ -44,8 +46,9 @@ public class PlayMan {
         do {
             System.out.println("What Col Would you like to guess?");
             colGuess = scan.nextInt();
-        } while (!(colGuess < 1 && colGuess > 10));
+        } while ((colGuess < 1 || colGuess > 10));
         // scan.close();
+        colGuess = colGuess - 1;
         return colGuess;
     }
 
@@ -56,8 +59,9 @@ public class PlayMan {
         do {
             System.out.println("What Row Would you like to guess?");
             rowGuess = scan.nextInt();
-        } while (!(rowGuess < 1 && rowGuess > 10));
+        } while ((rowGuess < 1 || rowGuess > 10));
         // scan.close();
+        rowGuess = rowGuess - 1;
         return rowGuess;
     }
 
@@ -69,8 +73,9 @@ public class PlayMan {
         do {
             System.out.println("What Col Would you like to guess?");
             colGuess = scan.nextInt();
-        } while (!(colGuess < 1 && colGuess > 8));
+        } while ((colGuess < 1 || colGuess > 8));
         // scan.close();
+        colGuess = colGuess - 1;
         return colGuess;
 
     }
@@ -82,8 +87,9 @@ public class PlayMan {
         do {
             System.out.println("What Row Would you like to guess?");
             rowGuess = scan.nextInt();
-        } while (!(rowGuess < 1 && rowGuess > 8));
+        } while ((rowGuess < 1 || rowGuess > 8));
         // scan.close();
+        rowGuess = rowGuess - 1;
         return rowGuess;
 
     }
@@ -96,8 +102,9 @@ public class PlayMan {
         do {
             System.out.println("What Col Would you like to guess?");
             colGuess = scan.nextInt();
-        } while (!(colGuess < 1) && !(colGuess > 10));
+        } while ((colGuess < 1 || colGuess > 10));
         // scan.close();
+        colGuess = colGuess - 1;
         return colGuess;
 
     }
@@ -109,7 +116,8 @@ public class PlayMan {
         do {
             System.out.println("What Row Would you like to guess?");
             rowGuess = scan.nextInt();
-        } while (!(rowGuess < 1) && !(rowGuess > 10));
+        } while ((rowGuess < 1 || rowGuess > 10));
+        rowGuess = rowGuess - 1;
         // scan.close();
         return rowGuess;
     }

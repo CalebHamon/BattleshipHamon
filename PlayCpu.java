@@ -55,12 +55,19 @@ public class PlayCpu {
     public int RegCPURowGuess() {
 
         Scanner scan = new Scanner(System.in);
-        int rowGuess;
-        do {
+        int rowGuess = 1;
+        int work = 1;
+        for(int i = 0; i < work; i++ ){
             System.out.println("What Row Would you like to guess?");
             rowGuess = scan.nextInt();
-        } while ((rowGuess < 1 && rowGuess > 10));
-        rowGuess = rowGuess - 1;
+            rowGuess = rowGuess - 1;
+            if (rowGuess >= 1 && rowGuess <=10){
+                return rowGuess;
+            }
+            else{
+                i = -1;
+            }
+        }
         // scan.close();
         return rowGuess;
     }

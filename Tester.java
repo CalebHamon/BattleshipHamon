@@ -30,14 +30,14 @@ public class Tester {
         PlayMan man = new PlayMan();
         int fasRow = 8;
         int fasCol = 8;
-        int regRow = 9;
-        int regCol = 9;
+        int regRow = 10;
+        int regCol = 10;
         int guessRow;
         int guessCol;
         boolean didWinU1 = true;
-        int addWinU1 = 1;
+        int addWinU1 = 0;
         boolean didWinU2 = true;
-        int addWinU2 = 1 ;
+        int addWinU2 = 0;
         if (board.Instructions()) { // would they like to play MAN(false) or CPU(true)
 
             if (board.WhatGame()) { // would they like to play fast(true) or normal(false)
@@ -73,6 +73,7 @@ public class Tester {
                     if (gameBrdU2[guessRow][guessCol] ==  1) {
                         System.out.println("HIT!");
                         guessBrdT1[guessRow][guessCol] = 1;
+                        addWinU1++;
                     }
                     else {
                         System.out.println("Miss");
@@ -97,112 +98,18 @@ public class Tester {
                     }
                     if (gameBrdU1[guessRow][guessCol] == 1){
                         System.out.println("The CPU Landed a HIT!");
+                        addWinU2++;
                     }
                     else {
                         System.out.println("The CPU missed");
                     }
-                    for (int p = 0; p < fasCol; p++) {
-                            for (int c = 0; c < fasRow; c++) {
-                                if(guessBrdT1[c][p] == 1){
-                                    addWinU1++;
-                                }
-                                if(addWinU1 == 8){
-                                    didWinU1 = true;
-                                }
-                                if(guessBrdT2[c][p] == 1){
-                                    addWinU2++;
-                                }
-                                if(addWinU2 == 8){
-                                    didWinU2 = true;
-                                }
-                            }
-                
-                        }
-                    } while (didWinU1);
-                    if (didWinU1){
-                        System.out.println("YOU WON!!!!");
-                        System.out.println("Rerun to play again!");
+                    if (addWinU1 == 8){
+                        didWinU1 = false;
                     }
-                    if (didWinU2){
-                        System.out.println("You lost :(");
-                        System.out.println("Rerun to play again!");
+                    if (addWinU2 == 8){
+                        didWinU2 = false;
                     }
-                    
-                
-            } else {
-                int[][] guessBrdU2 = new int[regRow][regCol];
-                int[][] guessBrdU1 = new int[regRow][regCol];
-                int[][] guessBrdT2 = new int[regRow][regCol];
-                int[][] guessBrdT1 = new int[regRow][regCol];
-                board.PrintBoardReg();
-                System.out.println("");
-                if (board.RandoNo()) {  // would they like to place ships manually(true) or randomly(false)
-                    guessBrdU1 = setup.SetupReg();
-                } else {
-                    guessBrdU1 = setup.SetupCPUReg();
-                }
-                System.out.println("Here is the board you will be using for the rest of the game:");
-                board.PrintBoardFas();
-                System.out.println("");                
-                System.out.println("1s Indicates HITS and 3s indicate a miss");
-                System.out.println("GOOD LUCK!");
-                do {
-                    System.out.println("YOUR TURN!");
-                    guessRow = cpu.RegCPURowGuess();
-                    guessCol = cpu.RegCPUColGuess();
-                    if (guessBrdU1[guessRow][guessCol] ==  3) {
-                        System.out.println("You have guessed here already");
-                        System.out.println("Please Try Again");
-                        do {
-                            guessRow = cpu.RegCPURowGuess();
-                            guessCol = cpu.RegCPUColGuess();
-                        } while (!(guessBrdU1[guessRow][guessCol] ==  3));
-                    }
-                    if (guessBrdU1[guessRow][guessCol] ==  1) {
-                        System.out.println("HIT!");
-                        guessBrdU1[guessRow][guessCol] = 1;
-                    }
-                    else {
-                        System.out.println("miss");
-                        guessBrdU1[guessRow][guessCol] = 3;
-                    }
-                        System.out.println("Your New Board:");
-                        System.out.println("");
-                        for (int p = 0; p < regCol; p++) {
-                            for (int c = 0; c < regRow; c++) {
-                                System.out.print(guessBrdU1[p][c]);
-                                System.out.print(" ");
-                            }
-                        System.out.println("");
-                        }
-                    do {
-                        guessRow = cpu.RegCPURowGuessRan();
-                        guessCol = cpu.RegCPURowGuessRan();
-                    } while(!(guessBrdU2[guessRow][guessCol] == 3));
-                    if (guessBrdU2[guessRow][guessCol] == 1){
-                        System.out.println("The CPU Landed a HIT!");
-                    }
-                    else {
-                        System.out.println("The CPU missed");
-                    }
-                    for (int p = 0; p < regCol; p++) {
-                            for (int c = 0; c < regRow; c++) {
-                                if(guessBrdU2[regRow][regCol] == 1){
-                                    addWinU1++;
-                                }
-                                if(addWinU1 == 17){
-                                    didWinU1 = false;
-                                }
-                                if(guessBrdU1[regRow][regCol] == 1){
-                                    addWinU2++;
-                                }
-                                if(addWinU2 == 17){
-                                    didWinU2 = false;
-                                }
-                            }
-                
-                        }
-                    } while (didWinU1);
+                    } while (!(didWinU1 == false || didWinU2 == false));
                     if (!didWinU1){
                         System.out.println("YOU WON!!!!");
                         System.out.println("Rerun to play again!");
@@ -211,6 +118,87 @@ public class Tester {
                         System.out.println("You lost :(");
                         System.out.println("Rerun to play again!");
                     }
+                    
+                
+            } else {
+                int[][] gameBrdU2 = new int[regRow][regCol];
+                int[][] gameBrdU1 = new int[regRow][regCol];
+                int[][] guessBrdT2 = new int[regRow][regCol];
+                int[][] guessBrdT1 = new int[regRow][regCol];
+                board.PrintBoardReg();
+                System.out.println("");
+                if (board.RandoNo()) {  // would they like to place ships manually(true) or randomly(false)
+                    gameBrdU1 = setup.SetupReg();
+                } else {
+                    gameBrdU1 = setup.SetupCPUReg();
+                }
+                gameBrdU2 = setup.SetupCPUReg();
+                System.out.println("Here is the board you will be using for the rest of the game:");
+                board.PrintBoardReg();
+                System.out.println("");                
+                System.out.println("1s Indicates HITS and 3s indicate a miss");
+                System.out.println("GOOD LUCK!");
+                do {
+                    System.out.println("YOUR TURN!");
+                    guessRow = cpu.RegCPURowGuess();
+                    guessCol = cpu.RegCPUColGuess();
+                    if (guessBrdT1[guessRow][guessCol] == 3) {
+                        System.out.println("You have guessed here already");
+                        System.out.println("Please Try Again");
+                        do {
+                            guessRow = cpu.RegCPURowGuess();
+                            guessCol = cpu.RegCPUColGuess();
+                        } while ((guessBrdT1[guessRow][guessCol] == 3));
+                    }
+                    if (gameBrdU2[guessRow][guessCol] ==  1) {
+                        System.out.println("HIT!");
+                        guessBrdT1[guessRow][guessCol] = 1;
+                        addWinU1++;
+                    }
+                    else {
+                        System.out.println("Miss");
+                        guessBrdT1[guessRow][guessCol] = 3;
+                    }
+                        System.out.println("Your Board:");
+                        System.out.println("");
+                        for (int p = 0; p < regCol; p++) {
+                            for (int c = 0; c < regRow; c++) {
+                                System.out.print(guessBrdT1[p][c]);
+                                System.out.print(" ");
+                            }
+                        System.out.println("");
+                        }
+                        guessRow = cpu.RegCPURowGuessRan();
+                        guessCol = cpu.RegCPUColGuessRan();
+                        if (guessBrdT2[guessRow][guessCol] ==  3) {
+                        do {
+                            guessRow = cpu.RegCPURowGuess();
+                            guessCol = cpu.RegCPUColGuess();
+                        } while (!(guessBrdT1[guessRow][guessCol] ==  3));
+                    }
+                    if (gameBrdU1[guessRow][guessCol] == 1){
+                        System.out.println("The CPU Landed a HIT!");
+                        addWinU2++;
+                    }
+                    else {
+                        System.out.println("The CPU missed");
+                    }
+                    if (addWinU1 == 17){
+                        didWinU1 = false;
+                    }
+                    if (addWinU2 == 17){
+                        didWinU2 = false;
+                    }
+                    } while (!(didWinU1 == false || didWinU2 == false));
+                    if (!didWinU1){
+                        System.out.println("YOU WON!!!!");
+                        System.out.println("Rerun to play again!");
+                    }
+                    if (!didWinU2){
+                        System.out.println("You lost :(");
+                        System.out.println("Rerun to play again!");
+                    }
+                    
             
 
         } } else {

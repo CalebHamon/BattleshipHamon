@@ -433,8 +433,8 @@ public class Setup {
     }
 
     public int[][] SetupCPUReg() {
-        numCols = 9;
-        numRows = 9;
+        numCols = 10;
+        numRows = 10;
         int[][] game = new int[numRows][numCols];
         Random random = new Random();
         int upperBound = 5;

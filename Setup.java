@@ -661,13 +661,6 @@ public class Setup {
 
 
             }
-            for (int p = 0; p < 10; p++) {
-                for (int c = 0; c < 10; c++) {
-                    System.out.print(game[p][c]);
-                    System.out.print(" ");
-                }
-                System.out.println("");
-            }
         
         return game;
     }

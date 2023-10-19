@@ -17,6 +17,7 @@ public class PlayCpu {
             System.out.println("What Col Would you like to guess?");
             colGuess = scan.nextInt();
         } while ((colGuess < 1 && colGuess > 8));
+        colGuess = colGuess - 1;
         // scan.close();
         return colGuess;
 
@@ -30,6 +31,7 @@ public class PlayCpu {
             System.out.println("What Row Would you like to guess?");
             rowGuess = scan.nextInt();
         } while ((rowGuess < 1 && rowGuess > 8));
+        rowGuess = rowGuess - 1;
         // scan.close();
         return rowGuess;
 
@@ -45,6 +47,7 @@ public class PlayCpu {
             colGuess = scan.nextInt();
         } while ((colGuess < 1 && colGuess > 10));
         // scan.close();
+        colGuess = colGuess - 1;
         return colGuess;
 
     }
@@ -57,6 +60,7 @@ public class PlayCpu {
             System.out.println("What Row Would you like to guess?");
             rowGuess = scan.nextInt();
         } while ((rowGuess < 1 && rowGuess > 10));
+        rowGuess = rowGuess - 1;
         // scan.close();
         return rowGuess;
     }
@@ -67,7 +71,7 @@ public class PlayCpu {
         rowguess = random.nextInt(8);
         return rowguess;
     }
-   
+
     public int FasCPUColGuessRan() {
         int colguess;
         Random random = new Random();

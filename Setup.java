@@ -26,8 +26,8 @@ public class Setup {
     // TO DO: Correct names of ships, I think some of them are off still.
 
     public int[][] SetupFas() {
-        numCols = 7;
-        numRows = 7;
+        numCols = 8;
+        numRows = 8;
         int[][] game = new int[numRows][numCols];
         int containerCols = 0;
         int containerRows = 0;
@@ -166,8 +166,8 @@ public class Setup {
     }
 
     public int[][] SetupReg() {
-        numCols = 9;
-        numRows = 9;
+        numCols = 10;
+        numRows = 10;
         int[][] game = new int[numRows][numCols];
         int containerCols = 0;
         int containerRows = 0;
@@ -376,8 +376,8 @@ public class Setup {
     }
 
     public int[][] SetupCPUFas() {
-        numCols = 7;
-        numRows = 7;
+        numCols = 8;
+        numRows = 8;
         int[][] game = new int[numRows][numCols];
         Random random = new Random();
         int upperBound = 3;

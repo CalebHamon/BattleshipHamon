@@ -40,7 +40,7 @@ public class Setup {
             newRow = scan.nextInt() - 1;
             System.out.println("What Column");
             newCol = scan.nextInt() - 1;
-            if (game[newRow][newCol] == 1) {
+            if (!(game[newRow][newCol] == 1)) {
 
                 if (q == 0) {
                     game[newRow][newCol] = 1;
@@ -79,7 +79,7 @@ public class Setup {
             newRow = scan.nextInt() - 1;
             System.out.println("What Column");
             newCol = scan.nextInt() - 1;
-            if (game[newRow][newCol] == 1) {
+            if (!(game[newRow][newCol] == 1)) {
 
                 if (q == 0) {
                     game[newRow][newCol] = 1;
@@ -118,7 +118,7 @@ public class Setup {
             newRow = scan.nextInt() - 1;
             System.out.println("What Column");
             newCol = scan.nextInt() - 1;
-            if (game[newRow][newCol] == 1) {
+            if (!(game[newRow][newCol] == 1)) {
 
                 if (q == 0) {
                     game[newRow][newCol] = 1;
@@ -178,7 +178,7 @@ public class Setup {
             newRow = scan.nextInt() - 1;
             System.out.println("What Column");
             newCol = scan.nextInt() - 1;
-            if (game[newRow][newCol] == 1) {
+            if (!(game[newRow][newCol] == 1)) {
 
                 if (q == 0) {
                     game[newRow][newCol] = 1;
@@ -218,7 +218,7 @@ public class Setup {
             newRow = scan.nextInt() - 1;
             System.out.println("What Column");
             newCol = scan.nextInt() - 1;
-            if (game[newRow][newCol] == 1) {
+            if (!(game[newRow][newCol] == 1)) {
 
                 if (q == 0) {
                     game[newRow][newCol] = 1;
@@ -257,7 +257,7 @@ public class Setup {
             newRow = scan.nextInt() - 1;
             System.out.println("What Column");
             newCol = scan.nextInt() - 1;
-            if (game[newRow][newCol] == 1) {
+            if (!(game[newRow][newCol] == 1)) {
 
                 if (q == 0) {
                     game[newRow][newCol] = 1;
@@ -296,7 +296,7 @@ public class Setup {
             newRow = scan.nextInt() - 1;
             System.out.println("What Column");
             newCol = scan.nextInt() - 1;
-            if (game[newRow][newCol] == 1) {
+            if (!(game[newRow][newCol] == 1)) {
 
                 if (q == 0) {
                     game[newRow][newCol] = 1;
@@ -335,7 +335,7 @@ public class Setup {
             newRow = scan.nextInt() - 1;
             System.out.println("What Column");
             newCol = scan.nextInt() - 1;
-            if (game[newRow][newCol] == 1) {
+            if (!(game[newRow][newCol] == 1)) {
 
                 if (q == 0) {
                     game[newRow][newCol] = 1;

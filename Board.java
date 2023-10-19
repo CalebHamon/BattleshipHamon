@@ -109,15 +109,17 @@ public class Board {
     }
 
     public boolean RandoNo() {
-        int choice;
+        String choice;
+        String yay = "YES";
+        String nay = "NO";
         Scanner scan = new Scanner(System.in);
         System.out.println("Would you like to place your ships manually or let the CPU do it?");
-        System.out.println("Type '1' for manually, '2' for randomly");
+        System.out.println("Type 'yes' for manually, 'no' for randomly");
         do {
-        choice = scan.nextInt();
+        choice = scan.nextLine();
         }
-        while (!(choice == 1 || choice == 2));
-        if (choice == 1){
+        while (!(choice.toUpperCase().equals(yay) || choice.toUpperCase().equals(nay)));
+        if (choice.toUpperCase().equals(yay)){
             return true;
         }
         else {

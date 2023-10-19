@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Tester {
 
     // The main method brings all of the classes together
@@ -26,7 +24,6 @@ public class Tester {
     // considering I have already made another method similar to it
 
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
         Board board = new Board();
         Setup setup = new Setup();
         PlayCpu cpu = new PlayCpu();
@@ -115,6 +112,15 @@ public class Tester {
                 
                         }
                     } while (!didWinU1 || !didWinU2 );
+                    if (didWinU1){
+                        System.out.println("YOU WON!!!!");
+                        System.out.println("Rerun to play again!");
+                    }
+                    if (didWinU2){
+                        System.out.println("You lost :(");
+                        System.out.println("Rerun to play again!");
+                    }
+                    
                 
             } else {
                 int[][] guessBrdU2 = new int[regRow][regCol];
@@ -188,6 +194,14 @@ public class Tester {
                 
                         }
                     } while (!didWinU1 || !didWinU2 );
+                    if (didWinU1){
+                        System.out.println("YOU WON!!!!");
+                        System.out.println("Rerun to play again!");
+                    }
+                    if (didWinU2){
+                        System.out.println("You lost :(");
+                        System.out.println("Rerun to play again!");
+                    }
             
 
         } } else {

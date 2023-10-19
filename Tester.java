@@ -31,10 +31,10 @@ public class Tester {
         Setup setup = new Setup();
         PlayCpu cpu = new PlayCpu();
         PlayMan man = new PlayMan();
-        int fasRow = 8;
-        int fasCol = 8;
-        int regRow = 10;
-        int regCol = 10;
+        int fasRow = 7;
+        int fasCol = 7;
+        int regRow = 9;
+        int regCol = 9;
         int guessRow;
         int guessCol;
         boolean didWinU1 = false;
@@ -44,24 +44,14 @@ public class Tester {
         if (board.Instructions()) { // would they like to play MAN(false) or CPU(true)
 
             if (board.WhatGame()) { // would they like to play fast(true) or normal(false)
-                int[][] guessBrdU2 = new int[7][7];
-                int[][] guessBrdU1 = new int[7][7];
+                int[][] guessBrdU2 = new int[fasRow][fasCol];
+                int[][] guessBrdU1 = new int[fasRow][fasCol];
                 board.PrintBoardFas();
                 System.out.println("");
                 if (board.RandoNo()) {  // would they like to place ships manually(true) or randomly(false)
                     guessBrdU1 = setup.SetupFas();
                 } else {
                     guessBrdU1 = setup.SetupCPUFas();
-                }
-            } else {
-                int[][] guessBrdU2 = new int[9][9];
-                int[][] guessBrdU1 = new int[9][9];
-                board.PrintBoardReg();
-                System.out.println("");
-                if (board.RandoNo()) {  // would they like to place ships manually(true) or randomly(false)
-                    guessBrdU1 = setup.SetupReg();
-                } else {
-                    guessBrdU1 = setup.SetupCPUReg();
                 }
                 System.out.println("Here is the board you will be using for the rest of the game:");
                 board.PrintBoardFas();
@@ -70,14 +60,14 @@ public class Tester {
                 System.out.println("GOOD LUCK!");
                 do {
                     System.out.println("YOUR TURN!");
-                    guessRow = cpu.RegCPURowGuess();
-                    guessCol = cpu.RegCPUColGuess();
+                    guessRow = cpu.FastCPURowGuess();
+                    guessCol = cpu.FastCPUColGuess();
                     if (guessBrdU1[guessRow][guessCol] ==  3) {
                         System.out.println("You have guessed here already");
                         System.out.println("Please Try Again");
                         do {
-                            guessRow = cpu.RegCPURowGuess();
-                            guessCol = cpu.RegCPUColGuess();
+                            guessRow = cpu.FastCPURowGuess();
+                            guessCol = cpu.FastCPUColGuess();
                         } while (!(guessBrdU1[guessRow][guessCol] ==  3));
                     }
                     if (guessBrdU1[guessRow][guessCol] ==  1) {
@@ -125,13 +115,86 @@ public class Tester {
                 
                         }
                     } while (!didWinU1 || !didWinU2 );
+                
+            } else {
+                int[][] guessBrdU2 = new int[regRow][regCol];
+                int[][] guessBrdU1 = new int[regRow][regCol];
+                board.PrintBoardReg();
+                System.out.println("");
+                if (board.RandoNo()) {  // would they like to place ships manually(true) or randomly(false)
+                    guessBrdU1 = setup.SetupReg();
+                } else {
+                    guessBrdU1 = setup.SetupCPUReg();
+                }
+                System.out.println("Here is the board you will be using for the rest of the game:");
+                board.PrintBoardFas();
+                System.out.println("");                
+                System.out.println("1s Indicates HITS and 3s indicate a miss");
+                System.out.println("GOOD LUCK!");
+                do {
+                    System.out.println("YOUR TURN!");
+                    guessRow = cpu.RegCPURowGuess();
+                    guessCol = cpu.RegCPUColGuess();
+                    if (guessBrdU1[guessRow][guessCol] ==  3) {
+                        System.out.println("You have guessed here already");
+                        System.out.println("Please Try Again");
+                        do {
+                            guessRow = cpu.RegCPURowGuess();
+                            guessCol = cpu.RegCPUColGuess();
+                        } while (!(guessBrdU1[guessRow][guessCol] ==  3));
+                    }
+                    if (guessBrdU1[guessRow][guessCol] ==  1) {
+                        System.out.println("HIT!");
+                        guessBrdU1[guessRow][guessCol] = 1;
+                    }
+                    else {
+                        System.out.println("miss");
+                        guessBrdU1[guessRow][guessCol] = 3;
+                    }
+                        System.out.println("Your New Board:");
+                        System.out.println("");
+                        for (int p = 0; p < regCol; p++) {
+                            for (int c = 0; c < regRow; c++) {
+                                System.out.print(guessBrdU1[p][c]);
+                                System.out.print(" ");
+                            }
+                        System.out.println("");
+                        }
+                    do {
+                        guessRow = cpu.RegCPURowGuessRan();
+                        guessCol = cpu.RegCPURowGuessRan();
+                    } while(!(guessBrdU2[guessRow][guessCol] == 3));
+                    if (guessBrdU2[guessRow][guessCol] == 1){
+                        System.out.println("The CPU Landed a HIT!");
+                    }
+                    else {
+                        System.out.println("The CPU missed");
+                    }
+                    for (int p = 0; p < regCol; p++) {
+                            for (int c = 0; c < regRow; c++) {
+                                if(guessBrdU2[regRow][regCol] == 1){
+                                    addWinU1++;
+                                }
+                                if(addWinU1 == 17){
+                                    didWinU1 = true;
+                                }
+                                if(guessBrdU1[regRow][regCol] == 1){
+                                    addWinU2++;
+                                }
+                                if(addWinU2 == 17){
+                                    didWinU2 = true;
+                                }
+                            }
+                
+                        }
+                    } while (!didWinU1 || !didWinU2 );
             
 
         } } else {
 
             if (board.WhatGame()) { // would they like to play fast(true) or normal(false)
-                int[][] guessBrdU2 = new int[7][7];
-                int[][] guessBrdU1 = new int[7][7];
+                int[][] guessBrdU2 = new int[fasRow][fasCol];
+                int[][] guessBrdU1 = new int[fasRow][fasCol];
                 board.PrintBoardFas();
                 System.out.println("");
                 if (board.RandoNo()) {  // would they like to place ships manually(true) or randomly(false)
@@ -140,8 +203,8 @@ public class Tester {
                     guessBrdU1 = setup.SetupCPUFas();
                 }
             } else {
-                int[][] guessBrdU2 = new int[9][9];
-                int[][] guessBrdU1 = new int[9][9];
+                int[][] guessBrdU2 = new int[regRow][regCol];
+                int[][] guessBrdU1 = new int[regRow][regCol];
                 board.PrintBoardReg();
                 System.out.println("");
                 if (board.RandoNo()) { // would they like to place ships manually(true) or randomly(false)

@@ -88,5 +88,4 @@ public class PlayCpu {
         colguess = random.nextInt(8);
         return colguess;
     }
-
 }

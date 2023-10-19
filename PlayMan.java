@@ -10,7 +10,7 @@ public class PlayMan {
     // is bound to be some error, but to the eye it looks good to me.
     // Also might need to do a way to hide each board that way there is no cheating
 
-    public static int FastManColGuessU1() {
+    public int FastManColGuessU1() {
 
         Scanner scan = new Scanner(System.in);
         int colGuess;
@@ -24,7 +24,7 @@ public class PlayMan {
 
     }
 
-    public static int FastManRowGuessU1() {
+    public int FastManRowGuessU1() {
 
         Scanner scan = new Scanner(System.in);
         int rowGuess;
@@ -36,7 +36,7 @@ public class PlayMan {
         return rowGuess;
     }
 
-    public static int RegManColGuessU1() {
+    public int RegManColGuessU1() {
 
         Scanner scan = new Scanner(System.in);
         int colGuess;
@@ -49,7 +49,7 @@ public class PlayMan {
         return colGuess;
     }
 
-    public static int RegManRowGuessU1() {
+    public int RegManRowGuessU1() {
 
         Scanner scan = new Scanner(System.in);
         int rowGuess;
@@ -61,7 +61,7 @@ public class PlayMan {
         return rowGuess;
     }
 
-    public static int FastManColGuessU2() {
+    public int FastManColGuessU2() {
 
         Scanner scan = new Scanner(System.in);
         int colGuess;
@@ -75,7 +75,7 @@ public class PlayMan {
 
     }
 
-    public static int FastManRowGuessU2() {
+    public int FastManRowGuessU2() {
 
         Scanner scan = new Scanner(System.in);
         int rowGuess;
@@ -88,7 +88,7 @@ public class PlayMan {
 
     }
 
-    public static int RegManColGuessU2() {
+    public int RegManColGuessU2() {
 
         Scanner scan = new Scanner(System.in);
         int colGuess;
@@ -102,7 +102,7 @@ public class PlayMan {
 
     }
 
-    public static int RegManRowGuessU2() {
+    public int RegManRowGuessU2() {
 
         Scanner scan = new Scanner(System.in);
         int rowGuess;

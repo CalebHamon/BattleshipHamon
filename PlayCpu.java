@@ -7,7 +7,7 @@ public class PlayCpu {
     // TO DO: Error control: I have not tested these methods yet, so I am sure there
     // is bound to be some error, but to the eye it looks good to me.
 
-    public static int FastCPUColGuess() {
+    public int FastCPUColGuess() {
 
         Scanner scan = new Scanner(System.in);
         int colGuess;
@@ -21,7 +21,7 @@ public class PlayCpu {
 
     }
 
-    public static int FastCPURowGuess() {
+    public int FastCPURowGuess() {
 
         Scanner scan = new Scanner(System.in);
         int rowGuess;
@@ -34,7 +34,7 @@ public class PlayCpu {
 
     }
 
-    public static int RegCPUColGuess() {
+    public int RegCPUColGuess() {
 
         Scanner scan = new Scanner(System.in);
         int colGuess;
@@ -48,7 +48,7 @@ public class PlayCpu {
 
     }
 
-    public static int RegCPURowGuess() {
+    public int RegCPURowGuess() {
 
         Scanner scan = new Scanner(System.in);
         int rowGuess;
